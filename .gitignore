@@ -4,3 +4,4 @@ node_modules
 screenshots
 videos
 downloads
+/package-lock.json
