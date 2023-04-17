@@ -24,3 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import '../support/action/navigateAction';
+import '../support/action/accountAction';
+
+Cypress.Commands.overwrite('log', (subject, message) => {
+    cy.task('log', message)
+});
