@@ -1,0 +1,6 @@
+*.log
+*.aes
+node_modules
+screenshots
+videos
+downloads

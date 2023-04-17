@@ -1,0 +1,692 @@
+{
+    "user": {
+        "existing_user": {
+            "name": "Jeremy",
+            "surname": "Bacceptance",
+            "email": "julien.david@b-acceptance.com",
+            "password": "Aladin$123"
+        }
+    },
+
+    "search" : {
+        "basic_search": {
+            "criteria": "a"
+        },
+        "with_results": {
+            "criteria": "semence"
+        }
+    }, 
+
+    "product":[
+        {
+            "product_uid": "INV9KE7HCOVBA3QNSEM",
+            "name": "SIBEMOL RHIZACTIV",
+            "offerName": "SIBEMOL RHIZACTIV RHIZACTIV - 10KG (Sac)",
+            "url": "/produits/SEM_SIBEMOL_RHIZACTIV",
+            "price": 86.60,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVFRGE5UZSI4RXSSEM",
+            "url": "/produits/SEM_SAINFOIN_AMBRA",
+            "price": 2.1,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP00264W9WOU6WSEM",
+            "url": "/produits/COOP26_SEM_5078",
+            "price": 2,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV6YVWB1ARW7KV0SEM",
+            "url": "/produits/SEM_LENTIFIX",
+            "price": 3.05,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVST2HAG31GSSZVSEM",
+            "url": "/produits/SEM_PROFIX_MOHA",
+            "price": 2.84,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP0026C66C1EKRSEM",
+            "url": "/produits/COOP26_SEM_12254",
+            "price": 110.57,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVSPVX12BYE3QZUSEM",
+            "url": "/produits/SEM_pro_FLOR",
+            "price": 28.67,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVGBZ60Q0GZV6KQSEM",
+            "url": "/produits/SEM_DIVA",
+            "price": 1.79,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP0026W97KDYHHSEM",
+            "url": "/produits/COOP26_SEM_13597",
+            "price": 3.47,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP0026OU1GVI3LSEM",
+            "url": "/produits/COOP26_SEM_13925",
+            "price": 8.82,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVAXAG70MS3AKT9SEM",
+            "url": "/produits/SEM_UTOPIA",
+            "price": 5.04,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVAX4XS26XSC5QGENG",
+            "url": "/produits/MINACTIV_P2_GRENG",
+            "price": 577,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVNN91JOBISEC5GENG",
+            "url": "/produits/KIESERITE_25ENG",
+            "price": 450,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVNN91JOBISEC5GENG",
+            "url": "/produits/KIESERITE_25ENG",
+            "price": 434,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVXVBGRYP7KIR17ENG",
+            "url": "/produits/0_20_30ENG",
+            "price": 874,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVF8G4OXL82B479ENG",
+            "url": "/produits/0_25_20ENG",
+            "price": 768,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVM23CM2GMJDNO2ENG",
+            "url": "/produits/LIZFLOW_130ENG",
+            "price": 99,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVVIF0869AFTSYJENG",
+            "url": "/produits/OXYFERTIL__Mixte_65_IPA_115ENG",
+            "price": 128,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP0026OC3PZSNIENG",
+            "url": "/produits/COOP26_ENG_5620",
+            "price": 21,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV19YN1OS80QTKGENG",
+            "url": "/produits/GRANUCAP_110ENG",
+            "price": 199,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP0026JA4ENCI2ENG",
+            "url": "/produits/COOP26_ENG_12861",
+            "price": 771,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVCNI2SF6BWO5DUENG",
+            "url": "/produits/METAFLOW_130ENG",
+            "price": 99,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVNFS3FS437GP48ENG",
+            "url": "/produits/Solution_azot%C3%A9e_N39ENG",
+            "price": 689,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP0026JA4ENCI2ENG",
+            "url": "/produits/COOP26_ENG_12861",
+            "price": 799,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVNT8W9QVK6XW8DENG",
+            "url": "/produits/UREE_46ENG",
+            "price": 869,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVNW9XQG1NSAQ4VENG",
+            "url": "/produits/Ammonitrate_27ENG",
+            "price": 806,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP00262EX8ICZYENG",
+            "url": "/produits/COOP26_ENG_5622",
+            "price": 12,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVFAD1XTGSZ0C4WEQE",
+            "url": "/produits/SECU_100311EQE",
+            "price": 79,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVZMRD91WRI5D51PHY",
+            "url": "/produits/4143PHY",
+            "price": 9.6,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVO9O7RY6AMLP3XPHY",
+            "url": "/produits/33662PHY",
+            "price": 19,
+            "click_collect": true
+        },
+        {
+            "product_uid": "INVOFRIF2B7K8QB2ENG",
+            "url": "/produits/ALPHA_CU_SRENG",
+            "price": 3.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVFLF6F6NOXJWIFAME",
+            "url": "/produits/AME_B000363",
+            "price": 9.75,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV96L164N1HRUXIPHY",
+            "url": "/produits/7653PHY",
+            "price": 20.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV0TK244A17BIE0PHY",
+            "url": "/produits/5290PHY",
+            "price": 104.2,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVJQQN6R2ZFHRODENG",
+            "url": "/produits/FERTIACTYL_STARTERENG",
+            "price": 13.2,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVVBESQHPD3K5JVAME",
+            "url": "/produits/AME_B000351",
+            "price": 3.3,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV33XLXS9EOXIDPPHY",
+            "url": "/produits/32776PHY",
+            "price": 26.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV8JX51I9OMLPLYPHY",
+            "url": "/produits/32786PHY",
+            "price": 87,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV2AUF4MX57VXEFPHY",
+            "url": "/produits/33027PHY",
+            "price": 49.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV3T0HNS54KAR1JPHY",
+            "url": "/produits/38815PHY",
+            "price": 3.35,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV9U7FP2FN6SUSAPHY",
+            "url": "/produits/4460PHY",
+            "price": 99.1,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVNACNVASNPJ4H6PHY",
+            "url": "/produits/32808PHY",
+            "price": 154.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVLPT5ML57PYRLUPHY",
+            "url": "/produits/33706PHY",
+            "price": 16.6,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVUJA84XJP4VPAFENG",
+            "url": "/produits/FERTIACTYL_STARTERENG",
+            "price": 13.2,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV9WADAGXJ6HD0RPHY",
+            "url": "/produits/33601PHY",
+            "price": 12.1,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV6HYU56GCMOSCGENG",
+            "url": "/produits/YARAVITA_ZINTRAC_850ENG",
+            "price": 8.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVQ8V9IFSPSAPI1ENG",
+            "url": "/produits/YARAVITA_ZEATRELENG",
+            "price": 5.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVZDG8TJP9M263VENG",
+            "url": "/produits/FORTHIALENG",
+            "price": 11.35,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVOOY2CEWOZ4O40ENG",
+            "url": "/produits/TRAFOS_MG_B_MN_FEENG",
+            "price": 2.1,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVK3NWIZ7CYBSX8AME",
+            "url": "/produits/AME_B000355",
+            "price": 6.8,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV0DAARE8UGUA9DPHY",
+            "url": "/produits/34603PHY",
+            "price": 3.6,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVZ238UF7C11G9TPHY",
+            "url": "/produits/10377PHY",
+            "price": 45.3,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVHUFTIWNJ8Q6X3ENG",
+            "url": "/produits/YARAVITA_AZOS_PROENG",
+            "price": 2.8,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVHUFTIWNJ8Q6X3ENG",
+            "url": "/produits/YARAVITA_AZOS_PROENG",
+            "price": 2.8,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVRLU395UVECWJOPHY",
+            "url": "/produits/39062PHY",
+            "price": 8.5,
+            "click_collect": false
+        },
+
+        {
+            "product_uid": "INV2LZHZ8YFEFDK9PHY",
+            "url": "/produits/33916PHY",
+            "price": 46,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVH1SODK9HVOFQQPHY",
+            "url": "/produits/39652PHY",
+            "price": 10,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVT2V9UP1W8DAE6PHY",
+            "url": "/produits/38561PHY",
+            "price": 69,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV0SHUY327RRNN6PHY",
+            "url": "/produits/43PHY",
+            "price": 19.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVL8C0O4RCE8FNAPHY",
+            "url": "/produits/33674PHY",
+            "price": 9.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVHM1NBQEIUZ0CMPHY",
+            "url": "/produits/7209PHY",
+            "price": 53.65,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVQHRVN59F3FR6KPHY",
+            "url": "/produits/40037PHY",
+            "price": 53,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVRH1B45NUOVLC2PHY",
+            "url": "/produits/35669PHY",
+            "price": 30.4,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVGEPNDBZ4M7SLJPHY",
+            "url": "/produits/40565PHY",
+            "price": 116,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVOL8JOMEP0ZBT6PHY",
+            "url": "/produits/35058PHY",
+            "price": 16.7,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV766OAKKJ82MBCPHY",
+            "url": "/produits/43PHY",
+            "price": 19.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVZ0KCAD7XNBMFZPHY",
+            "url": "/produits/40037PHY",
+            "price": 58,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVQJQ4UXKXKBZQBPHY",
+            "url": "/produits/34320PHY",
+            "price": 27.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVL60WCVBP99ED1PHY",
+            "url": "/produits/32834PHY",
+            "price": 46,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVGFZ2PPWRISQK5ENG",
+            "url": "/produits/TRAINERENG",
+            "price": 7.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVGFZ2PPWRISQK5ENG",
+            "url": "/produits/TRAINERENG",
+            "price": 7.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVPGF0E7HE31QKEENG",
+            "url": "/produits/PHOSPHO_BO1087SENG",
+            "price": 3.7,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVPGF0E7HE31QKEENG",
+            "url": "/produits/PHOSPHO_BO1087SENG",
+            "price": 3.7,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVNXY7AMTPG7XAEPHY",
+            "url": "/produits/7209PHY",
+            "price": 52.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV288XO7OGXQH19PHY",
+            "url": "/produits/36945PHY",
+            "price": 5.7,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV30FY4LPZ60BBXPHY",
+            "url": "/produits/34878PHY",
+            "price": 8.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVDAFCN47VEGC9CEQC",
+            "url": "/produits/BIO%20NATURAL_BIONATAMO0309PLEQC",
+            "price": 48.95,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVDAFCN47VEGC9CEQC",
+            "url": "/produits/BIO%20NATURAL_BIONATAMO0309PLEQC",
+            "price": 48.95,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVL7JLEBBSXWIH6PHY",
+            "url": "/produits/37510PHY",
+            "price": 156.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVG3SUQKGYMHC3VPHY",
+            "url": "/produits/38237PHY",
+            "price": 22.8,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVUZUZSJN3B5GC4PHY",
+            "url": "/produits/38515PHY",
+            "price": 135,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVLESK9GWTZ9CU5PHY",
+            "url": "/produits/38462PHY",
+            "price": 48.6,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVONCK7K8TIRDLFPHY",
+            "url": "/produits/38336PHY",
+            "price": 19.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVJR7Y59KGJKOSPPHY",
+            "url": "/produits/38630PHY",
+            "price": 10.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVEKW620BKPAJ01PHY",
+            "url": "/produits/38623PHY",
+            "price": 12.6,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVG2QHO67Q648PMENG",
+            "url": "/produits/YIELDONENG",
+            "price": 10.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVG2QHO67Q648PMENG",
+            "url": "/produits/YIELDONENG",
+            "price": 10.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVJ2F9JLVQ3EFR7PHY",
+            "url": "/produits/32993PHY",
+            "price": 18.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVVMZ5R5NI2ILGQAME",
+            "url": "/produits/AME_5000007525",
+            "price": 3.65,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV2PFW1HPJNCQREENG",
+            "url": "/produits/FINAL_KENG",
+            "price": 11.07,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV2PFW1HPJNCQREENG",
+            "url": "/produits/FINAL_KENG",
+            "price": 11.07,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV5I5DJ5GIVE3EKENG",
+            "url": "/produits/EPSO_BORTOP_CRENG",
+            "price": 1.2,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV5I5DJ5GIVE3EKENG",
+            "url": "/produits/EPSO_BORTOP_CRENG",
+            "price": 1.2,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVHVJSPYQ39SDLVENG",
+            "url": "/produits/Nan�os__NS_CuMnENG",
+            "price": 13.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVHVJSPYQ39SDLVENG",
+            "url": "/produits/Nan�os__NS_CuMnENG",
+            "price": 13.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVT78YSEUSUZC4SENG",
+            "url": "/produits/RISE_PENG",
+            "price": 3.1,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVT78YSEUSUZC4SENG",
+            "url": "/produits/RISE_PENG",
+            "price": 3.1,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVOJ0B6CHRHKLZBPHY",
+            "url": "/produits/39644PHY",
+            "price": 19.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVDFQ0KH4HIS434PHY",
+            "url": "/produits/39037PHY",
+            "price": 24,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV20KT9V9WLRGQ9PHY",
+            "url": "/produits/38543PHY",
+            "price": 5.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV44TAC4TYHG6LYPHY",
+            "url": "/produits/36162PHY",
+            "price": 6.7,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV9PUQA1T9LLGHDPHY",
+            "url": "/produits/35054PHY",
+            "price": 49.9,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVLDBOHX3RXLGGWPHY",
+            "url": "/produits/36417PHY",
+            "price": 45,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INV8SHGMTLPZI6MRPHY",
+            "url": "/produits/40688PHY",
+            "price": 75.5,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVSSTJFMLBCWDZJSHB",
+            "url": "/produits/SHB_0710_FELICIANO_KWS",
+            "price": 192.51,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVRJWR5SDM2QLVRSHB",
+            "url": "/produits/SHB_0470_CRISTIANO_KWS",
+            "price": 153.45,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP0026QWAL1AJMSVC",
+            "url": "/produits/COOP26_SVC_3810",
+            "price": 208,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP0026FFZ88CBQSVC",
+            "url": "/produits/COOP26_SVC_12710",
+            "price": 62,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP0026Z9E5NFURSVC",
+            "url": "/produits/COOP26_SVC_12729",
+            "price": 306,
+            "click_collect": false
+        },
+        {
+            "product_uid": "COOP0026R3NV76SMSVC",
+            "url": "/produits/COOP26_SVC_12893",
+            "price": 8.82,
+            "click_collect": false
+        },
+        {
+            "product_uid": "INVXMEB1JOY84DYCPHY",
+            "url": "/produits/10377PHY",
+            "price": 43.2,
+            "click_collect": false
+        }
+    ]
+}
+
