@@ -23,24 +23,4 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import '../support/action/loginAction';
-import '../support/action/headerAction';
-import '../support/action/cartAction';
-import '../support/action/productAction';
-import '../support/action/categoryAction';
-import '../support/action/deliveryAction';
-import '../support/action/paymentAction';
 import '../support/action/navigateAction';
-import '../support/action/creationAccountAction';
-
-function convertPriceToString(price) {
-    return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(price).replace(/\u00a0/g, " ");
-}
-
-Cypress.Commands.add('convertPriceToString', (price) => {
-    return cy.wrap(convertPriceToString(price));
-})
-
-Cypress.Commands.overwrite('log', (subject, message) => {
-    cy.task('log', message)
-});

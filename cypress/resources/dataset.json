@@ -1,19 +1,7 @@
 {
-    "user": {
-        "client01": {
-            "site_id": "c00",
-            "lastname": "Jardi",
-            "firstname": "Land",
+    "clients": {
+        "existing_client": {
             "email": "test.jardilandTESTO1@yopmail.com",
-            "number_phone": "0102030405",
-            "password": "34P96YkLV33f@"
-        },
-        "client02": {
-            "site_id": "c01",
-            "name": "Test",
-            "firstname": "Auto",
-            "email": "test.jardiland02@yopmail.com",
-            "number_phone": "",
             "password": "34P96YkLV33f@"
         }
     }
