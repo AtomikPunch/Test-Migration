@@ -3,9 +3,10 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://www.jardiland.com/',
+    chromeWebSecurity: false,
     defaultCommandTimeout: 5000,
     screenshotsFolder: 'cypress/screenshots',
-    experimentalSessionAndOrigin: true,
+    experimentalOriginDependencies: true,
     fixturesFolder: 'cypress/resources',
     supportFile: 'cypress/src/support/e2e.js',
     setupNodeEvents(on, config) {

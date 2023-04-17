@@ -1,4 +1,8 @@
 {
 	"domain": "",
-	"start_url": "https://www.jardiland.com/"
+	"start_url": "https://www.jd-test.invivodigitalfactory.com/",
+	"origins": {
+		"storefront":"https://www.jd-test.invivodigitalfactory.com",
+		"auth":"https://invivo-jardiland-test.eu.auth0.com"
+	}
 }
