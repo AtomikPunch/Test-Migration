@@ -41,5 +41,10 @@ Cypress.Commands.add("i_access_to_the_registration_page", () => {
             signon.access_to_account_registration.trigger('click');
         });
     });
+})
 
+Cypress.Commands.add("i_access_to_my_account", () => {
+    cy.get("@bag").then((bag) => {
+        bag.pages.home.signin_link.click();
+    });
 })

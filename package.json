@@ -10,10 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": ">=10.9.0",
+    "cypress": "^12.9.0",
     "cypress-localstorage-commands": ">=2.2.1",
     "cypress-xpath": ">=2.0.1"
-  },
-  "dependencies": {
   }
 }
