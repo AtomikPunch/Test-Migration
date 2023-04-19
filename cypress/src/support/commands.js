@@ -25,6 +25,8 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import '../support/action/navigateAction';
 import '../support/action/accountAction';
+import '../support/action/productAction';
+import '../support/action/cartAction';
 
 Cypress.Commands.overwrite('log', (subject, message) => {
     cy.task('log', message)

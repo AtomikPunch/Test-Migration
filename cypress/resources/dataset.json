@@ -2,7 +2,20 @@
     "clients": {
         "existing_client": {
             "email": "test.jardilandTESTO1@yopmail.com",
-            "password": "34P96YkLV33f@"
+            "password": "34P96YkLV33f@",
+            "default_address" : "4 rue jean moulin",
+            "new_address_firstname" : "BACC",
+            "new_address_lastname" : "Test",
+            "new_address" : "55 rue la quintinie",
+            "new_postal_code" : "75015",
+            "new_city" : "Paris",
+            "new_number" : "612345677"
+        }
+    },
+    "product" : {
+        "existing_product" : {
+            "product_id" : "",
+            "product_name" : ""
         }
     }
 }
