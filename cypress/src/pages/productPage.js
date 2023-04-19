@@ -21,10 +21,10 @@ exports.productPage = class productPage{
     }
 
     get access_to_cart(){
-        return cy.get('.footer .is-primary', {timeout : 5000});
+        return cy.get('.ds-ens-addtocart-modal__actions .is-primary', {timeout : 5000});
     }
 
     get continue_shopping(){
-        return cy.get('.footer .is-tertiary', {timeout : 5000});
+        return cy.get('.is-tertiary', {timeout : 5000});
     }
 }

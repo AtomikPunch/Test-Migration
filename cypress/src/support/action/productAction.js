@@ -13,7 +13,7 @@ Cypress.Commands.add('i_choose_a_store_from_header', () => {
         bag.pages.product.postal_code_input.type('95410')
         cy.wait(3000);
         bag.pages.product.postal_code_input.type('{enter}');
-        bag.pages.product.first_store.click();
+        bag.pages.product.first_store.should('be.visible').click();
     });
 })
 

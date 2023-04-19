@@ -4,6 +4,7 @@ const { signonPage } = require('../src/pages/signonPage');
 const { productPage } = require('../src/pages/productPage');
 const { cartPage } = require('../src/pages/cartPage');
 const { accountPage } = require('../src/pages/accountPage');
+const { deliveryPage } = require('../src/pages/deliveryPage');
 
 describe('Checkout', () => {
     beforeEach(() => {
@@ -18,7 +19,8 @@ describe('Checkout', () => {
                         "signon": new signonPage(),
                         "product" : new productPage(),
                         "cart" : new cartPage(),
-                        "account" : new accountPage()
+                        "account" : new accountPage(),
+                        "delivery" : new deliveryPage()
                     }
                 };
                 cy.wrap(initial_bag).as('bag');
@@ -86,11 +88,15 @@ describe('Checkout', () => {
 
     //CO06
     it('i can add a new address as a known user',()=> {
-        cy.i_access_to_the_webstore();
-        cy.i_access_to_the_login_page();
+        cy.i_access_PDP();
+        cy.i_choose_a_store_from_header();
+        cy.i_add_product_to_cart();
+        cy.i_continue_shopping();
+        cy.i_access_cart_from_header();
+        cy.i_go_to_checkin();
         cy.i_fill_the_login_form('existing_client');
         cy.i_submit_the_login_form();
-        cy.i_access_to_my_account();
+        cy.i_verify_delivery_page_is_visible();
         cy.i_add_new_delivery_address('existing_client');
         cy.i_verify_new_address_successfully_added();
     });
