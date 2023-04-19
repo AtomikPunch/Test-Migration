@@ -100,4 +100,5 @@ describe('Checkout', () => {
         cy.i_add_new_delivery_address('existing_client');
         cy.i_verify_new_address_successfully_added();
     });
+
 })
