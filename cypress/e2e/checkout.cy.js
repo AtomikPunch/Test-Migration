@@ -87,7 +87,7 @@ describe('Checkout', () => {
     });
 
     //CO06
-    it('i can add a new address as a known user',()=> {
+    it('i can modify address as a known user',()=> {
         cy.i_access_PDP();
         cy.i_choose_a_store_from_header();
         cy.i_add_product_to_cart();
@@ -98,6 +98,19 @@ describe('Checkout', () => {
         cy.i_submit_the_login_form();
         cy.i_verify_delivery_page_is_visible();
         cy.i_add_new_delivery_address('existing_client');
+        cy.i_verify_new_address_successfully_added();
+    });
+
+    //CO07
+    it('i can add a new address as a new user', () => {
+        cy.i_access_PDP();
+        cy.i_choose_a_store_from_header();
+        cy.i_add_product_to_cart();
+        cy.i_continue_shopping();
+        cy.i_access_cart_from_header();
+        cy.i_go_to_checkin();
+        cy.i_create_a_new_account_by_filling_form('new_client');
+        cy.i_add_new_delivery_address('new_client');
         cy.i_verify_new_address_successfully_added();
     });
 

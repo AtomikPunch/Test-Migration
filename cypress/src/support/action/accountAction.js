@@ -26,3 +26,16 @@ Cypress.Commands.add("i_should_be_loggedin", () => {
         bag.pages.home.signin_link.should('have.class', 'ens-signin__text-icon--active');
     });
 })
+
+Cypress.Commands.add("i_create_a_new_account_by_filling_form", (client_reference) => {
+    cy.get("@bag").then((bag) => {
+        let client = bag.data.clients[client_reference]
+        cy.log("i_create_a_new_account");
+        bag.pages.cart.create_new_account.click();
+        bag.pages.cart.first_name_input.clear().type(client.first_name);
+        bag.pages.cart.last_name_input.type(client.last_name);
+        bag.pages.cart.email_input.type(client.email);
+        bag.pages.cart.password_input.type(client.password);
+        bag.pages.cart.submit_account_creation.click();
+    });
+})

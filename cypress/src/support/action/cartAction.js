@@ -43,7 +43,12 @@ Cypress.Commands.add('i_add_new_delivery_address', (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference]
         cy.log("i_add_new_delivery_address");
-        bag.pages.delivery.modify_address.should('be.visible').click();
+
+        bag.pages.delivery.modify_address.then($button => {
+            if ($button.is(':visible')){
+              $button.click();
+            }
+          })
         bag.pages.delivery.new_first_name_input.clear().type(client.new_address_firstname);
         bag.pages.delivery.new_last_name_input.clear().type(client.new_address_lastname);
         bag.pages.delivery.new_address_input.clear().type(client.new_address);

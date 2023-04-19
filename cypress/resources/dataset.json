@@ -10,6 +10,18 @@
             "new_postal_code" : "75015",
             "new_city" : "Paris",
             "new_number" : "612345677"
+        },
+        "new_client" : {
+            "first_name" : "TEST",
+            "last_name" : "pompeii",
+            "email" : "test69@getnada.com",
+            "password" : "BACC123!!",
+            "new_address_firstname" : "TEST",
+            "new_address_lastname" : "test",
+            "new_address" : "55 rue nimportquelrue",
+            "new_postal_code" : "75015",
+            "new_city" : "Paris",
+            "new_number" : "612345678"
         }
     },
     "product" : {
