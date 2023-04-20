@@ -5,6 +5,7 @@ const { productPage } = require('../src/pages/productPage');
 const { cartPage } = require('../src/pages/cartPage');
 const { accountPage } = require('../src/pages/accountPage');
 const { deliveryPage } = require('../src/pages/deliveryPage');
+const { paymentPage } = require('../src/pages/paymentPage');
 
 describe('Checkout', () => {
     beforeEach(() => {
@@ -20,7 +21,8 @@ describe('Checkout', () => {
                         "product" : new productPage(),
                         "cart" : new cartPage(),
                         "account" : new accountPage(),
-                        "delivery" : new deliveryPage()
+                        "delivery" : new deliveryPage(),
+                        "payment" : new paymentPage()
                     }
                 };
                 cy.wrap(initial_bag).as('bag');
@@ -112,6 +114,21 @@ describe('Checkout', () => {
         cy.i_create_a_new_account_by_filling_form('new_client');
         cy.i_add_new_delivery_address('new_client');
         cy.i_verify_new_address_successfully_added();
+    });
+
+    //CO08
+    it('i can pay with my credit card 3DS', () => {
+        cy.i_access_PDP();
+        cy.i_choose_a_store_from_header();
+        cy.i_add_product_to_cart();
+        cy.i_continue_shopping();
+        cy.i_access_cart_from_header();
+        cy.i_go_to_checkin();
+        cy.i_fill_the_login_form('existing_client');
+        cy.i_submit_the_login_form();
+        cy.i_verify_delivery_page_is_visible();
+        cy.i_fill_payment_form('3DS_frictionless');
+        cy.i_pay_for_my_order();
     });
 
 })

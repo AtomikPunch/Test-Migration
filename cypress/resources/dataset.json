@@ -29,5 +29,26 @@
             "product_id" : "",
             "product_name" : ""
         }
+    },
+    "credit_card" : {
+        "successful_operation" : {
+            "number" : "4065600099110000",
+            "expiry" : "03/26",
+            "cvv" : "123",
+            "holder" : "TEST TEST"
+        },
+        "3DS_frictionless" : {
+            "number" : "4464210935060000",
+            "expiry" : "03/26",
+            "cvv" : "123",
+            "holder" : "TEST TEST"
+        },
+        "3DS_authentification" : {
+            "number" : "4464215790990001",
+            "expiry" : "03/26",
+            "cvv" : "123",
+            "holder" : "TEST TEST"
+        }
+
     }
 }

@@ -9,6 +9,10 @@ exports.deliveryPage = class deliveryPage{
     }
 
     //-------------------------------------------------------------------------
+    get procede_to_payment(){
+        return cy.get('.ds-ens-prices-bottom__action', {timeout : 5000});
+    }
+    //-------------------------------------------------------------------------
 
     get new_first_name_input(){
         return cy.get('[data-cy="last-name-input-address"] input', {timeout : 5000});
