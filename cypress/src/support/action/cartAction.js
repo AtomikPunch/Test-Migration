@@ -98,6 +98,11 @@ Cypress.Commands.add('i_pay_for_my_order', () => {
         cy.log("i_pay_for_my_order");
         bag.pages.payment.accept_condition.click();
         bag.pages.payment.pay_command.click();
+    });
+})
+
+Cypress.Commands.add('i_get_order_confirmation_in_checkout', () => {
+    cy.get('@bag').then((bag) => {
         bag.pages.payment.checkout_confirmation.should('be.visible');
     });
 })

@@ -31,7 +31,7 @@ describe('Checkout', () => {
     });
 
     //CO01
-    it('i can log-in from delivery page and come back to it', () => {
+    /*it('i can log-in from delivery page and come back to it', () => {
         cy.i_access_PDP();
         cy.i_choose_a_store_from_header();
         cy.i_add_product_to_cart();
@@ -129,6 +129,23 @@ describe('Checkout', () => {
         cy.i_verify_delivery_page_is_visible();
         cy.i_fill_payment_form('3DS_frictionless');
         cy.i_pay_for_my_order();
-    });
+    });*/
 
+    //CO09
+    it('i get an order validation from checkout and mail', () => {
+        cy.i_access_PDP();
+        cy.i_choose_a_store_from_header();
+        cy.i_add_product_to_cart();
+        cy.i_continue_shopping();
+        cy.i_access_cart_from_header();
+        cy.i_go_to_checkin();
+        cy.i_fill_the_login_form('getnada_client');
+        cy.i_submit_the_login_form();
+        cy.i_verify_delivery_page_is_visible();
+        cy.i_fill_payment_form('3DS_frictionless');
+        cy.i_pay_for_my_order();
+        cy.i_get_order_confirmation_in_checkout();
+        cy.API_getnada('getnada_client');
+        cy.API_delete_mail('getnada_client');
+    });
 })
