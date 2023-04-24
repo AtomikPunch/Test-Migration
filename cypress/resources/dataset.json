@@ -57,5 +57,17 @@
             "holder" : "TEST TEST"
         }
 
+    },
+    "store" : {
+        "Groslay" : {
+            "name" : "Groslay",
+            "postal_code" : "95410",
+            "card_number" : "188"
+        },
+        "La Queue en Brie" : {
+            "name" : "La Queue en Brie",
+            "postal_code" : "94510",
+            "card_number" : "139"
+        }
     }
 }
