@@ -35,4 +35,20 @@ describe('Cart', () => {
         cy.i_access_cart_from_header();
         cy.i_verify_discount('existing_product');
     });
+
+    //CA02
+    it('i can change store from cart and the product will be unavailable', () => {
+        cy.i_access_PDP();
+        cy.i_access_store_choice_from_header();
+        cy.i_fill_search_store('Groslay');
+        cy.i_select_favorite_store('Groslay');
+        cy.i_pick_up_product_in_store();
+        cy.i_continue_shopping();
+        cy.i_access_cart_from_header();
+        cy.i_access_store_choice_from_header();
+        cy.i_change_store();
+        cy.i_fill_search_store('unavailable_product');
+        cy.i_select_a_new_store('unavailable_product');
+        cy.i_verify_cart_is_empty();
+    });
 })

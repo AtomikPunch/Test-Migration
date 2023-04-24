@@ -115,3 +115,9 @@ Cypress.Commands.add('i_verify_discount', (product_reference) => {
         });
     });
 })
+
+Cypress.Commands.add('i_verify_cart_is_empty', () => {
+    cy.get('@bag').then((bag) => {
+        bag.pages.cart.empty_cart.should('be.visible');
+    });
+})
