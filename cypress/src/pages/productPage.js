@@ -1,7 +1,7 @@
 exports.productPage = class productPage{
 
-    get choose_store(){
-        return cy.get('.ens-store-locator-header__content', {timeout : 5000});
+    get verify_disponibility(){
+        return cy.get('.ens-product-sheet-main-check-availability__button', {timeout : 5000});
     }
 
     get postal_code_input(){

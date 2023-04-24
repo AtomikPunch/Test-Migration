@@ -9,7 +9,7 @@ Cypress.Commands.add("i_access_PDP", () => {
 
 Cypress.Commands.add('i_choose_a_store_from_header', () => {
     cy.get("@bag").then((bag) => {
-        bag.pages.product.choose_store.click();
+        bag.pages.commons.choose_store.click();
         bag.pages.product.postal_code_input.type('95410')
         cy.wait(3000);
         bag.pages.product.postal_code_input.type('{enter}');
