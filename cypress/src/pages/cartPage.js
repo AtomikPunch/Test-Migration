@@ -31,4 +31,8 @@ exports.cartPage = class cartPage{
     get submit_account_creation(){
         return cy.get('[data-test="v-create-account-submit-button"]', {timeout : 5000});
     }
+
+    get reduced_price(){
+        return cy.get('.ds-ens-product-card-line__price .ds-ens-pricing__price-amount--xxl', {timeout : 5000});
+    }
 }

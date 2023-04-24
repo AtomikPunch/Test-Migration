@@ -33,8 +33,9 @@
     },
     "product" : {
         "existing_product" : {
-            "product_id" : "",
-            "product_name" : ""
+            "id" : "2068566",
+            "name" : "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
+            "price" : "64,99 €"
         }
     },
     "credit_card" : {
@@ -68,6 +69,16 @@
             "name" : "La Queue en Brie",
             "postal_code" : "94510",
             "card_number" : "139"
+        },
+        "store_with_promotion" : {
+            "name" : "Gometz-le-Chatel",
+            "postal_code" : "91940",
+            "card_number" : "227"
+        },
+        "unavailable_product" : {
+            "name" : "Vernouillet",
+            "postal_code": "78540",
+            "card_number" : "137"
         }
     }
 }
