@@ -121,3 +121,19 @@ Cypress.Commands.add('i_verify_cart_is_empty', () => {
         bag.pages.cart.empty_cart.should('be.visible');
     });
 })
+
+Cypress.Commands.add('i_change_delivery_option', () => {
+    cy.get('@bag').then((bag) => {
+        bag.pages.cart.checkbox_home_delivery.click();
+    });
+})
+
+Cypress.Commands.add('i_verify_total_changed', (product_reference) => {
+    cy.wait(4000);
+    cy.get('@bag').then((bag) => {
+        let product = bag.data.product[product_reference];
+        bag.pages.cart.total_price.invoke('text').then((text) => {
+            expect(text.trim().replace(/\u00a0/g, ' ')).not.equal(product.price)
+        });
+    });
+})
