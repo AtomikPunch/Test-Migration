@@ -63,3 +63,12 @@ Cypress.Commands.add('i_access_PLP',() => {
         bag.pages.commons.accept_cookies.click();
     });
 })
+
+Cypress.Commands.add('i_access_a_category', (product_reference) => {
+    cy.get("@bag").then((bag) => {
+        let product = bag.data.product.existing_product[product_reference];
+        cy.log("i_access_a_category");
+        cy.visit('https://www.jd-test.invivodigitalfactory.com/c/' + product.category );
+        bag.pages.list.product_list.should('be.visible');
+    });
+});

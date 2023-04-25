@@ -35,7 +35,16 @@
         "existing_product" : {
             "id" : "2068566",
             "name" : "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
-            "price" : "64,99 €"
+            "price" : "64,99 €",
+            "level_1" : {
+                "category" : "plante"
+            },
+            "level_2" : {
+                "category" : "gazon"
+            },
+            "level_3" : {
+                "category" : "gazon-rustique"
+            }
         }
     },
     "credit_card" : {
@@ -65,10 +74,10 @@
             "postal_code" : "95410",
             "card_number" : "188"
         },
-        "La Queue en Brie" : {
-            "name" : "La Queue en Brie",
-            "postal_code" : "94510",
-            "card_number" : "139"
+        "store_with_different_price" : {
+            "name" : "Lieusaint",
+            "postal_code" : "77127",
+            "card_number" : "15"
         },
         "store_with_promotion" : {
             "name" : "Gometz-le-Chatel",
