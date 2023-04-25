@@ -38,4 +38,18 @@ describe('Cart', () => {
     it('i can access PLP level 3', () => {
         cy.i_access_a_category('level_3');
     });
+
+    //OF05
+    it('i can access PDP without selected store', () => {
+        cy.i_access_PDP();
+        cy.i_verify_access_to_PDP();
+    });
+
+    //OF06
+    it('i can access PDP with selected store', () => {
+        cy.i_access_to_the_webstore();
+        cy.i_choose_a_store_from_header();
+        cy.i_access_PDP();
+        cy.i_verify_access_to_PDP();
+    });
 })

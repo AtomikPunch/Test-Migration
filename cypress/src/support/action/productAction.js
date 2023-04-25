@@ -40,3 +40,9 @@ Cypress.Commands.add('i_continue_shopping',() => {
         bag.pages.product.continue_shopping.click();
     });
 })
+
+Cypress.Commands.add('i_verify_access_to_PDP', () => {
+    cy.get('@bag').then((bag)=> {
+        bag.pages.product.product_sheet.should('be.visible');
+    });
+})
