@@ -52,4 +52,35 @@ describe('Cart', () => {
         cy.i_access_PDP();
         cy.i_verify_access_to_PDP();
     });
+
+    //OF09
+    it('i can filter by max a price', () => {
+        cy.i_access_PLP();
+        cy.i_filter_by_max_price();
+        cy.i_verify_filter_tag_added('1');
+    });
+
+    //OF10
+    it('i can filter by price range', () => {
+        cy.i_access_PLP();
+        cy.i_filter_by_max_price();
+        cy.i_filter_by_min_price();
+        cy.i_verify_filter_tag_added('1');
+    });
+
+    //OF11
+    it('i can filter by brand', () => {
+        cy.i_access_PLP();
+        cy.i_filter_by_brand();
+        cy.i_verify_filter_tag_added('1');
+    });
+
+    //OF12
+    it('i can filter by brand and price range', () => {
+        cy.i_access_PLP();
+        cy.i_filter_by_max_price();
+        cy.i_filter_by_min_price();
+        cy.i_filter_by_brand();
+        cy.i_verify_filter_tag_added('2');
+    });
 })

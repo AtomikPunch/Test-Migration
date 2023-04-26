@@ -29,6 +29,7 @@ import '../support/action/productAction';
 import '../support/action/cartAction';
 import '../support/action/API';
 import '../support/action/storeAction';
+import '../support/action/merchAction';
 
 Cypress.Commands.overwrite('log', (subject, message) => {
     cy.task('log', message)
