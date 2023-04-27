@@ -53,6 +53,20 @@ describe('Cart', () => {
         cy.i_verify_access_to_PDP();
     });
 
+    /* //OF07
+    it('i can search a product through search bar with its name', () => {
+        cy.i_access_to_the_webstore();
+        cy.i_search_a_product('name');
+        cy.i_verify_product_in_PLP('existing_product');
+    });
+
+    //OF08
+    it('i can search a product through search bar with its brand', () => {
+        cy.i_access_to_the_webstore();
+        cy.i_search_a_product('brand');
+        cy.i_verify_product_in_PLP('existing_product');
+    }); */
+
     //OF09
     it('i can filter by max a price', () => {
         cy.i_access_PLP();

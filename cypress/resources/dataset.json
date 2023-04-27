@@ -6,7 +6,7 @@
             "default_address" : "4 rue jean moulin",
             "new_address_firstname" : "BACC",
             "new_address_lastname" : "Test",
-            "new_address" : "55 rue la quintinie",
+            "new_address" : "4 rue jean moulin",
             "new_postal_code" : "75015",
             "new_city" : "Paris",
             "new_number" : "612345677"
@@ -36,6 +36,7 @@
             "id" : "2068566",
             "name" : "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
             "price" : "64,99 €",
+            "brand" : "ECLOZ",
             "level_1" : {
                 "category" : "plante"
             },
@@ -80,7 +81,7 @@
             "card_number" : "15"
         },
         "store_with_promotion" : {
-            "name" : "Gometz-le-Chatel",
+            "name" : "Gometz-le-Châtel",
             "postal_code" : "91940",
             "card_number" : "227"
         },

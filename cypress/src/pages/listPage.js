@@ -32,4 +32,7 @@ exports.listPage = class listPage{
         return cy.get('.filter-tags__selected-facets > ', {timeout : 5000});
     }
 
+    get see_more_product(){
+        return cy.get('.ens-product-list-template__main-navigation--footer .ens-product-list-template__more-products', {timeout : 5000});
+    }
 }
