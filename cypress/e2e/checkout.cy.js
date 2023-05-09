@@ -31,7 +31,7 @@ describe('Checkout', () => {
     });
 
     //CO01
-    /*it('i can log-in from delivery page and come back to it', () => {
+    it('i can log-in from delivery page and come back to it', () => {
         cy.i_access_PDP();
         cy.i_choose_a_store_from_header();
         cy.i_add_product_to_cart();
@@ -129,7 +129,7 @@ describe('Checkout', () => {
         cy.i_verify_delivery_page_is_visible();
         cy.i_fill_payment_form('3DS_frictionless');
         cy.i_pay_for_my_order();
-    });*/
+    });
 
     //CO09
     it('i get an order validation from checkout and mail', () => {
