@@ -48,7 +48,7 @@ describe('Cart', () => {
     //OF06
     it('i can access PDP with selected store', () => {
         cy.i_access_to_the_webstore();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header('Groslay');
         cy.i_access_PDP();
         cy.i_verify_access_to_PDP();
     });

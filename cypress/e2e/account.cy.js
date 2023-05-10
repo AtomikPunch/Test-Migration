@@ -34,7 +34,7 @@ describe('Account', () => {
 
     it('i can log-in with an existing account from checkout', () => {
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header('Groslay');
         cy.i_add_product_to_cart();
         cy.i_access_to_cart_from_pop_up();
         cy.i_go_to_checkin();

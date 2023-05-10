@@ -7,10 +7,11 @@ Cypress.Commands.add("i_access_PDP", () => {
     });
 })
 
-Cypress.Commands.add('i_choose_a_store_from_header', () => {
+Cypress.Commands.add('i_choose_a_store_from_header', (store_reference) => {
     cy.get("@bag").then((bag) => {
+        let store = bag.data.store[store_reference];
         bag.pages.commons.choose_store.click();
-        bag.pages.product.postal_code_input.type('95410')
+        bag.pages.product.postal_code_input.type(store.postal_code);
         cy.wait(3000);
         bag.pages.product.postal_code_input.type('{enter}');
         bag.pages.product.first_store.should('be.visible').click();

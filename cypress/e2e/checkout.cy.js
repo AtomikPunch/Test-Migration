@@ -33,7 +33,7 @@ describe('Checkout', () => {
     //CO01
     it('i can log-in from delivery page and come back to it', () => {
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header('Groslay');
         cy.i_add_product_to_cart();
         cy.i_access_to_cart_from_pop_up();
         cy.i_go_to_checkin();
@@ -45,7 +45,7 @@ describe('Checkout', () => {
     //CO02
     it('i can form a cart filled with both delivery methods', () => {
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header('Groslay');
         cy.i_add_product_to_cart();
         cy.i_continue_shopping();
         cy.i_pick_up_product_in_store();
@@ -56,7 +56,7 @@ describe('Checkout', () => {
     //CO03
     it('i can form a cart filled with home delivery method only ', () => {
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header('Groslay');
         cy.i_add_product_to_cart();
         cy.i_continue_shopping();
         cy.i_add_product_to_cart();
@@ -68,7 +68,7 @@ describe('Checkout', () => {
     //CO04
     it('i can form a cart filled with click and collect method only ', () => {
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header('Groslay');
         cy.i_pick_up_product_in_store();
         cy.i_continue_shopping();
         cy.i_pick_up_product_in_store();
@@ -78,7 +78,7 @@ describe('Checkout', () => {
     //CO05
     it('i can use my default delivery address as a known user', () => {
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header('Groslay');
         cy.i_add_product_to_cart();
         cy.i_access_to_cart_from_pop_up();
         cy.i_go_to_checkin();
@@ -91,7 +91,7 @@ describe('Checkout', () => {
     //CO06
     it('i can modify address as a known user',()=> {
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header('Groslay');
         cy.i_add_product_to_cart();
         cy.i_continue_shopping();
         cy.i_access_cart_from_header();
@@ -106,7 +106,7 @@ describe('Checkout', () => {
     //CO07
     it('i can add a new address as a new user', () => {
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header('Groslay');
         cy.i_add_product_to_cart();
         cy.i_continue_shopping();
         cy.i_access_cart_from_header();
@@ -119,7 +119,7 @@ describe('Checkout', () => {
     //CO08
     it('i can pay with my credit card 3DS', () => {
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header('Groslay');
         cy.i_add_product_to_cart();
         cy.i_continue_shopping();
         cy.i_access_cart_from_header();
@@ -134,7 +134,7 @@ describe('Checkout', () => {
     //CO09
     it('i get an order validation from checkout and mail', () => {
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header('Groslay');
         cy.i_add_product_to_cart();
         cy.i_continue_shopping();
         cy.i_access_cart_from_header();
