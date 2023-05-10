@@ -70,8 +70,8 @@ describe('Cart', () => {
     //OF09
     it('i can filter by max a price', () => {
         cy.i_access_PLP();
-        cy.i_filter_by_max_price();
-        cy.i_verify_filter_tag_added('1');
+        cy.i_filter_by_max_price('maximum');
+        cy.i_verify_filter_tag_added('1','maximum');
     });
 
     //OF10

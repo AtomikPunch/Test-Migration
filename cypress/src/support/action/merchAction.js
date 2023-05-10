@@ -1,8 +1,9 @@
-Cypress.Commands.add('i_filter_by_max_price', () => {
+Cypress.Commands.add('i_filter_by_max_price', (FilterBy_reference) => {
     cy.get("@bag").then((bag) => {
+        let filter = bag.data.FilterBy[FilterBy_reference];
         cy.log("i_filter_by_max_price");
         bag.pages.list.filter.click();
-        bag.pages.list.max_price_filter.type('100').type('{enter}');
+        bag.pages.list.max_price_filter.type(filter.option).type('{enter}');
     });
 });
 
@@ -28,10 +29,12 @@ Cypress.Commands.add('i_filter_by_brand', () => {
     });
 });
 
-Cypress.Commands.add('i_verify_filter_tag_added', (filter_number) => {
+Cypress.Commands.add('i_verify_filter_tag_added', (filter_count,filter_reference) => {
     cy.get("@bag").then((bag) => {
+        let filter_selected = bag.data.FilterBy[filter_reference];
         cy.log("i_verify_filter_tag_added");
-        bag.pages.list.filter_tag.should('be.visible').should('have.length', filter_number);
+        bag.pages.list.filter_tag.should('have.length', filter_count);
+        bag.pages.list.filter_tag.contains(filter_selected.option);
     });
 });
 

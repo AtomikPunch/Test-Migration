@@ -90,5 +90,20 @@
             "postal_code": "78540",
             "card_number" : "137"
         }
+    },
+    "FilterBy" : {
+        "maximum" : {
+            "option" : "100"
+        },
+        "minimum" : {
+            "option" : "10"
+        },
+        "Jardiland" : {
+            "option" : "Jardiland"
+        },
+        "Fertiligene" : {
+            "option" : "Fertiligène"
+        }
+        
     }
 }
