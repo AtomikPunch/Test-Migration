@@ -77,10 +77,11 @@ describe('Cart', () => {
     //OF10
     it('i can filter by price range', () => {
         cy.i_access_PLP();
-        cy.i_filter_by_max_price();
-        cy.i_filter_by_min_price();
-        cy.i_verify_filter_tag_added('1');
-    });
+        cy.i_filter_by_max_price('maximum');
+        cy.i_filter_by_min_price('minimum');
+        cy.i_verify_filter_tag_added('1', 'maximum');
+        cy.i_verify_filter_tag_added('1', 'minimum');
+    }); 
 
     //OF11
     it('i can filter by brand', () => {
