@@ -15,10 +15,10 @@ Cypress.Commands.add('i_filter_by_min_price', (FilterBy_reference) => {
     });
 });
 
-Cypress.Commands.add('i_filter_by_brand', () => {
+Cypress.Commands.add('i_filter_by_brand', (FilterBy_reference) => {
     cy.get("@bag").then((bag) => {
-        cy.log("i_verify_filter_tag_added");
-        //bag.pages.list.filter.click();
+        let filter = bag.data.FilterBy[FilterBy_reference];
+        cy.log("i_filter_by_brand");
         bag.pages.list.filter.then($button => {
             if($button.is(':visible'))
             {
@@ -26,7 +26,7 @@ Cypress.Commands.add('i_filter_by_brand', () => {
             }
         })
         bag.pages.list.brand_list.click();
-        bag.pages.list.first_brand.click({force: true});
+        cy.get('[id*=' + filter.option + ']+.checkbox-frame').click();
     });
 });
 

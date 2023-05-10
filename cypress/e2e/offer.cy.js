@@ -86,16 +86,18 @@ describe('Cart', () => {
     //OF11
     it('i can filter by brand', () => {
         cy.i_access_PLP();
-        cy.i_filter_by_brand();
-        cy.i_verify_filter_tag_added('1');
+        cy.i_filter_by_brand('Fertiligene');
+        cy.i_verify_filter_tag_added('1','Fertiligene');
     });
 
     //OF12
     it('i can filter by brand and price range', () => {
         cy.i_access_PLP();
-        cy.i_filter_by_max_price();
-        cy.i_filter_by_min_price();
-        cy.i_filter_by_brand();
-        cy.i_verify_filter_tag_added('2');
+        cy.i_filter_by_max_price('maximum');
+        cy.i_filter_by_min_price('minimum');
+        cy.i_filter_by_brand('Jardiland');
+        cy.i_verify_filter_tag_added('2', 'maximum');
+        cy.i_verify_filter_tag_added('2', 'minimum');
+        cy.i_verify_filter_tag_added('2', 'Jardiland');
     });
 })
