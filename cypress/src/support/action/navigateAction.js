@@ -4,6 +4,7 @@ Cypress.Commands.add("i_access_to_the_webstore", () => {
         cy.log("i_access_to_the_webstore");
         cy.visit(bag.environment.start_url);
         bag.pages.commons.accept_cookies.click();
+        bag.pages.commons.close_choose_store.click();
     });
 })
 
@@ -54,3 +55,22 @@ Cypress.Commands.add("i_access_cart_from_header", () => {
         bag.pages.home.cart_link.click();
     });
 })
+
+Cypress.Commands.add('i_access_PLP',() => {
+    cy.get("@bag").then((bag) => {
+        
+        cy.log("i_access_PLP");
+        cy.visit(bag.environment.product_list_url);
+        bag.pages.commons.accept_cookies.click();
+        bag.pages.commons.close_choose_store.click();
+    });
+})
+
+Cypress.Commands.add('i_access_a_category', (product_reference) => {
+    cy.get("@bag").then((bag) => {
+        let product = bag.data.product.existing_product[product_reference];
+        cy.log("i_access_a_category");
+        cy.visit( bag.environment.start_url + 'c/' + product.category );
+        bag.pages.list.product_list.should('be.visible');
+    });
+});

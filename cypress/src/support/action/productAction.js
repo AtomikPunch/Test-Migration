@@ -7,10 +7,11 @@ Cypress.Commands.add("i_access_PDP", () => {
     });
 })
 
-Cypress.Commands.add('i_choose_a_store_from_header', () => {
+Cypress.Commands.add('i_choose_a_store_from_header', (store_reference) => {
     cy.get("@bag").then((bag) => {
-        bag.pages.product.choose_store.click();
-        bag.pages.product.postal_code_input.type('95410')
+        let store = bag.data.store[store_reference];
+        bag.pages.commons.choose_store.click();
+        bag.pages.product.postal_code_input.type(store.postal_code);
         cy.wait(3000);
         bag.pages.product.postal_code_input.type('{enter}');
         bag.pages.product.first_store.should('be.visible').click();
@@ -38,5 +39,11 @@ Cypress.Commands.add('i_access_to_cart_from_pop_up',() => {
 Cypress.Commands.add('i_continue_shopping',() => {
     cy.get('@bag').then((bag)=> {
         bag.pages.product.continue_shopping.click();
+    });
+})
+
+Cypress.Commands.add('i_verify_access_to_PDP', () => {
+    cy.get('@bag').then((bag)=> {
+        bag.pages.product.product_sheet.should('be.visible');
     });
 })

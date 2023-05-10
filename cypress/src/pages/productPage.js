@@ -1,7 +1,7 @@
 exports.productPage = class productPage{
 
-    get choose_store(){
-        return cy.get('.ens-store-locator-header__content', {timeout : 5000});
+    get verify_disponibility(){
+        return cy.get('.ens-product-sheet-main-check-availability__button', {timeout : 5000});
     }
 
     get postal_code_input(){
@@ -26,5 +26,9 @@ exports.productPage = class productPage{
 
     get continue_shopping(){
         return cy.get('.is-tertiary', {timeout : 5000});
+    }
+
+    get product_sheet(){
+        return cy.get('.ens-product-sheet-main', {timeout : 5000});
     }
 }
