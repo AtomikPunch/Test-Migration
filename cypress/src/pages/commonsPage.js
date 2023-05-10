@@ -5,6 +5,10 @@ exports.commonsPage = class commonsPage{
         return cy.get('#axeptio_overlay #axeptio_btn_acceptAll', {timeout : 5000});
     }
 
+    get close_choose_store(){
+        return cy.get('.idf-modal__header__close', {timeout : 5000});
+    }
+
     get choose_store(){
         return cy.get('.ens-store-locator-header__content', {timeout : 5000});
     }
