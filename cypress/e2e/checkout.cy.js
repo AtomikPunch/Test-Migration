@@ -18,11 +18,11 @@ describe('Checkout', () => {
                         "commons": new commonsPage(),
                         "home": new homePage(),
                         "signon": new signonPage(),
-                        "product" : new productPage(),
-                        "cart" : new cartPage(),
-                        "account" : new accountPage(),
-                        "delivery" : new deliveryPage(),
-                        "payment" : new paymentPage()
+                        "product": new productPage(),
+                        "cart": new cartPage(),
+                        "account": new accountPage(),
+                        "delivery": new deliveryPage(),
+                        "payment": new paymentPage()
                     }
                 };
                 cy.wrap(initial_bag).as('bag');
@@ -88,8 +88,9 @@ describe('Checkout', () => {
         cy.i_verify_user_default_address('existing_client');
     });
 
-    //CO06
-    it('i can modify address as a known user',()=> {
+    //CO06 
+    // TODO : il faut vider le panier du compte connu car après plusieurs relances l'article n'est plus disponible en quantité suffisante 
+    it('i can modify address as a known user', () => {
         cy.i_access_PDP();
         cy.i_choose_a_store_from_header('Groslay');
         cy.i_add_product_to_cart();
@@ -99,18 +100,22 @@ describe('Checkout', () => {
         cy.i_fill_the_login_form('existing_client');
         cy.i_submit_the_login_form();
         cy.i_verify_delivery_page_is_visible();
+        cy.clearCookies();
         cy.i_add_new_delivery_address('existing_client');
         cy.i_verify_new_address_successfully_added();
     });
 
     //CO07
+    // TODO : il faut ajouter une adresse via appel API (on le fera plus tard)
     it('i can add a new address as a new user', () => {
+        cy.generate_email_random('new_client');
         cy.i_access_PDP();
         cy.i_choose_a_store_from_header('Groslay');
         cy.i_add_product_to_cart();
         cy.i_continue_shopping();
         cy.i_access_cart_from_header();
         cy.i_go_to_checkin();
+        // TODO : il faut ajouter une adresse via appel API (on le fera plus tard)
         cy.i_create_a_new_account_by_filling_form('new_client');
         cy.i_add_new_delivery_address('new_client');
         cy.i_verify_new_address_successfully_added();
@@ -148,4 +153,5 @@ describe('Checkout', () => {
         cy.API_getnada('getnada_client');
         cy.API_delete_mail('getnada_client');
     });
+
 })
