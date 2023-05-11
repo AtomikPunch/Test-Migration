@@ -9,7 +9,8 @@
       "new_address": "4 rue jean moulin",
       "new_postal_code": "75015",
       "new_city": "Paris",
-      "new_number": "612345677"
+      "new_number": "612345677",
+      "store": "magasinweb"
     },
     "new_client": {
       "first_name": "Mathieu",
@@ -135,6 +136,10 @@
 
 
   "store": {
+    "magasinweb": {
+      "slug_id": "magasinweb",
+      "store_id": "164"
+    },
     "Groslay": {
       "name": "Groslay",
       "postal_code": "95410",

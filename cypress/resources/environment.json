@@ -3,6 +3,7 @@
 	"start_url": "https://www.jd-test.invivodigitalfactory.com/",
 	"product_url_prefix" : "https://www.jd-test.invivodigitalfactory.com/p/",
 	"product_list_url" : "https://www.jd-test.invivodigitalfactory.com/c/gazon",
+	"api_url_prefix": "https://api.jd-test.invivodigitalfactory.com",
 	"origins": {
 		"storefront":"https://www.jd-test.invivodigitalfactory.com",
 		"auth":"https://invivo-jardiland-test.eu.auth0.com"
