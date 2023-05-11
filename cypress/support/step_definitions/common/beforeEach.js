@@ -1,4 +1,11 @@
-const { testPage } = require('../../../src/pages/testPage');
+const { homePage } = require('../../../src/pages/homePage');
+const { commonsPage } = require('../../../src/pages/commonsPage');
+const { signonPage } = require('../../../src/pages/signonPage');
+const { productPage } = require('../../../src/pages/productPage');
+const { cartPage } = require('../../../src/pages/cartPage');
+const { accountPage } = require('../../../src/pages/accountPage');
+const { deliveryPage } = require('../../../src/pages/deliveryPage');
+const { paymentPage } = require('../../../src/pages/paymentPage');
 
 beforeEach(() => {
   cy.log("This will run before every scenario");
@@ -8,7 +15,14 @@ beforeEach(() => {
             environment: env,
             data: dataset,
             pages : {
-              "test": new testPage()
+              "commons": new commonsPage(),
+              "home": new homePage(),
+              "signon": new signonPage(),
+              "product": new productPage(),
+              "cart": new cartPage(),
+              "account": new accountPage(),
+              "delivery": new deliveryPage(),
+              "payment": new paymentPage()
             }
         };
         cy.wrap(initial_bag).as('bag');
