@@ -1,8 +1,9 @@
-Cypress.Commands.add("i_access_PDP", () => {
+Cypress.Commands.add("i_access_PDP", (product_reference) => {
     cy.get("@bag").then((bag) => {
         
-        cy.log("i_access_PDP");
-        cy.visit(bag.environment.product_url);
+        cy.log("i_access_PDP " + product_reference);
+        let product_url = bag.environment.product_url_prefix + bag.data.products[product_reference].id;
+        cy.visit(product_url);
         bag.pages.commons.accept_cookies.click();
     });
 })

@@ -1,7 +1,7 @@
 {
 	"domain": "",
 	"start_url": "https://www.jd-test.invivodigitalfactory.com/",
-	"product_url" : "https://www.jd-test.invivodigitalfactory.com/p/gazon-facile-ecloz-tapis-de-gazon-pret-a-pousser-pour-15-m2-2068566",
+	"product_url_prefix" : "https://www.jd-test.invivodigitalfactory.com/p/",
 	"product_list_url" : "https://www.jd-test.invivodigitalfactory.com/c/gazon",
 	"origins": {
 		"storefront":"https://www.jd-test.invivodigitalfactory.com",

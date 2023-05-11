@@ -43,8 +43,56 @@
       "sender": "no-reply@contact.enseignes.com"
     }
   },
-  "product": {
+
+
+
+  "products": {
     "existing_product": {
+      "id": "2068566",
+      "name": "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
+      "price": "64,99 €",
+      "brand": "ECLOZ",
+      "level_1": {
+        "category": "plante"
+      },
+      "level_2": {
+        "category": "gazon"
+      },
+      "level_3": {
+        "category": "gazon-rustique"
+      }
+    },
+    "available_in_delivery": {
+      "id": "2068566",
+      "name": "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
+      "price": "64,99 €",
+      "brand": "ECLOZ",
+      "level_1": {
+        "category": "plante"
+      },
+      "level_2": {
+        "category": "gazon"
+      },
+      "level_3": {
+        "category": "gazon-rustique"
+      }
+    },
+    "available_in_pickup": {
+      "id": "2068566",
+      "name": "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
+      "price": "64,99 €",
+      "brand": "ECLOZ",
+      "level_1": {
+        "category": "plante"
+      },
+      "level_2": {
+        "category": "gazon"
+      },
+      "level_3": {
+        "category": "gazon-rustique"
+      }
+    },
+    "available_in_pickup_and_delivery": {
       "id": "2068566",
       "name": "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
       "price": "64,99 €",
@@ -60,6 +108,9 @@
       }
     }
   },
+
+
+
   "credit_card": {
     "successful_operation": {
       "number": "4065600099110000",
@@ -80,6 +131,9 @@
       "holder": "TEST TEST"
     }
   },
+
+
+
   "store": {
     "Groslay": {
       "name": "Groslay",
@@ -107,6 +161,9 @@
       "card_number": "137"
     }
   },
+
+
+
   "FilterBy": {
     "maximum": {
       "option": "100"

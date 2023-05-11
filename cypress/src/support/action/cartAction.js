@@ -1,7 +1,7 @@
-Cypress.Commands.add("i_go_to_checkin", () => {
+Cypress.Commands.add("i_go_to_checkout", () => {
     cy.get("@bag").then((bag) => {
         
-        cy.log("i_go_to_checkin");
+        cy.log("i_go_to_checkout");
         bag.pages.cart.check_in.click();
 
         cy.origin(bag.environment.origins.auth, () => {
