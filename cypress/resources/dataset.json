@@ -3,118 +3,92 @@
         "existing_client": {
             "email": "test.jardilandTESTO1@yopmail.com",
             "password": "34P96YkLV33f@",
-            "default_address": "4 rue jean moulin",
-            "new_address_firstname": "BACC",
-            "new_address_lastname": "Test",
-            "new_address": "4 rue jean moulin",
-            "new_postal_code": "75015",
-            "new_city": "Paris",
-            "new_number": "612345677"
+            "default_address" : "4 rue jean moulin",
+            "new_address_firstname" : "BACC",
+            "new_address_lastname" : "Test",
+            "new_address" : "4 rue jean moulin",
+            "new_postal_code" : "75015",
+            "new_city" : "Paris",
+            "new_number" : "612345677"
         },
-        "new_client": {
-            "first_name": "TEST",
-            "last_name": "pompeii",
-            "email": "test.QVderXlcfM@getnada.com",
-            "password": "BACc123!!",
-            "new_address_firstname": "TEST",
-            "new_address_lastname": "test",
-            "new_address": "55 rue nimportquelrue",
-            "new_postal_code": "75015",
-            "new_city": "Paris",
-            "new_number": "612345678"
+        "new_client" : {
+            "first_name" : "TEST",
+            "last_name" : "pompeii",
+            "email" : "testsamere@getnada.com",
+            "password" : "BACC123!!",
+            "new_address_firstname" : "TEST",
+            "new_address_lastname" : "test",
+            "new_address" : "55 rue nimportquelrue",
+            "new_postal_code" : "75015",
+            "new_city" : "Paris",
+            "new_number" : "612345678"
         },
-        "new_client_checkout": {
-            "first_name": "TEST02",
-            "last_name": "pompeii02",
-            "email": "test.M8BuVau6DT@getnada.com",
-            "password": "BACc123!!",
-            "new_address_firstname": "TEST02",
-            "new_address_lastname": "test02",
-            "new_address": "65 rue nimportquelrue",
-            "new_postal_code": "75015",
-            "new_city": "Paris",
-            "new_number": "612345678"
-        },
-        "getnada_client": {
-            "email": "testinvivo@getnada.com",
-            "password": "BACc123!!",
-            "uid": "",
-            "subject": "Confirmation de votre commande Jardiland.com",
-            "sender": "no-reply@contact.enseignes.com"
+        "getnada_client" : {
+            "email" : "testinvivo@getnada.com",
+            "password" : "BACc123!!",
+            "uid" : "",
+            "subject" : "Confirmation de votre commande Jardiland.com",
+            "sender" : "no-reply@contact.enseignes.com"
         }
     },
-    "product": {
-        "existing_product": {
-            "id": "2068566",
-            "name": "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
-            "price": "64,99 €",
-            "brand": "ECLOZ",
-            "level_1": {
-                "category": "plante"
+    "product" : {
+        "existing_product" : {
+            "id" : "2068566",
+            "name" : "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
+            "price" : "64,99 €",
+            "brand" : "ECLOZ",
+            "level_1" : {
+                "category" : "plante"
             },
-            "level_2": {
-                "category": "gazon"
+            "level_2" : {
+                "category" : "gazon"
             },
-            "level_3": {
-                "category": "gazon-rustique"
+            "level_3" : {
+                "category" : "gazon-rustique"
             }
         }
     },
-    "credit_card": {
-        "successful_operation": {
-            "number": "4065600099110000",
-            "expiry": "03/26",
-            "cvv": "123",
-            "holder": "TEST TEST"
+    "credit_card" : {
+        "successful_operation" : {
+            "number" : "4065600099110000",
+            "expiry" : "03/26",
+            "cvv" : "123",
+            "holder" : "TEST TEST"
         },
-        "3DS_frictionless": {
-            "number": "4464210935060000",
-            "expiry": "03/26",
-            "cvv": "123",
-            "holder": "TEST TEST"
+        "3DS_frictionless" : {
+            "number" : "4464210935060000",
+            "expiry" : "03/26",
+            "cvv" : "123",
+            "holder" : "TEST TEST"
         },
-        "3DS_authentification": {
-            "number": "4464215790990001",
-            "expiry": "03/26",
-            "cvv": "123",
-            "holder": "TEST TEST"
+        "3DS_authentification" : {
+            "number" : "4464215790990001",
+            "expiry" : "03/26",
+            "cvv" : "123",
+            "holder" : "TEST TEST"
         }
+
     },
-    "store": {
-        "Groslay": {
-            "name": "Groslay",
-            "postal_code": "95410",
-            "card_number": "188"
+    "store" : {
+        "Groslay" : {
+            "name" : "Groslay",
+            "postal_code" : "95410",
+            "card_number" : "188"
         },
-        "store_with_different_price": {
-            "name": "Lieusaint",
-            "postal_code": "77127",
-            "card_number": "15"
+        "store_with_different_price" : {
+            "name" : "Lieusaint",
+            "postal_code" : "77127",
+            "card_number" : "15"
         },
-        "store_with_promotion": {
-            "name": "Gometz-le-Châtel",
-            "postal_code": "91940",
-            "card_number": "227"
+        "store_with_promotion" : {
+            "name" : "Gometz-le-Châtel",
+            "postal_code" : "91940",
+            "card_number" : "227"
         },
-        "unavailable_product": {
-            "name": "Vernouillet",
+        "unavailable_product" : {
+            "name" : "Vernouillet",
             "postal_code": "78540",
-            "card_number": "137"
+            "card_number" : "137"
         }
-    },
-    "FilterBy" : {
-        "maximum" : {
-            "option" : "100"
-        },
-        "minimum" : {
-            "option" : "10"
-        },
-        "Jardiland" : {
-            "option" : "Jardiland"
-        },
-        "Fertiligene" : {
-            "option" : "Fertiligène"
-        }
-        
     }
 }
