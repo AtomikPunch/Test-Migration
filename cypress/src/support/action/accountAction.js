@@ -75,11 +75,10 @@ Cypress.Commands.add("generate_email_random", (client_reference) => {
         return `test.${randomString}@getnada.com`;
     }
 
-    cy.readFile('cypress/resources/dataset.json').then((data) => {
+    cy.get("@bag").then((bag) => {    
         const randomEmail = generateRandomEmail();
-        let client = data.clients[client_reference]
+        let client = bag.data.clients[client_reference]
         client.email = randomEmail;
-        cy.writeFile('cypress/resources/dataset.json', JSON.stringify(data));
     })
 })
 

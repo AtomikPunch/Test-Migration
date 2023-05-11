@@ -4,7 +4,6 @@ Cypress.Commands.add("i_access_to_the_webstore", () => {
         cy.log("i_access_to_the_webstore");
         cy.visit(bag.environment.start_url);
         bag.pages.commons.accept_cookies.click();
-        bag.pages.commons.close_choose_store.click();
     });
 })
 
