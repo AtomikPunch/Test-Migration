@@ -47,7 +47,7 @@ describe('Account', () => {
     it('i can create account from checkout', () => {
         cy.generate_email_random('new_client_checkout');
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header("main_store");
         cy.i_add_product_to_cart();
         cy.i_continue_shopping();
         cy.i_access_cart_from_header();
@@ -69,7 +69,7 @@ describe('Account', () => {
     // Timed out retrying after 5000ms: expected '<button.ens-store-locator-card__cta.idf-button.is-primary>' to be 'visible'
     it('i can log-in with an existing account from checkout', () => {
         cy.i_access_PDP();
-        cy.i_choose_a_store_from_header();
+        cy.i_choose_a_store_from_header("main_store");
         cy.i_add_product_to_cart();
         cy.i_access_to_cart_from_pop_up();
         cy.i_go_to_checkin();
