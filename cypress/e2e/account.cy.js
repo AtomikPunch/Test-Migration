@@ -25,8 +25,6 @@ describe('Account', () => {
                     }
                 };
                 cy.wrap(initial_bag).as('bag');
-
-                //cy.generate_email_random();
             });
         });
     });
