@@ -1,4 +1,6 @@
-Cypress.Commands.add("i_access_PDP", (product_reference) => {
+const { Given, Then } = require("@badeball/cypress-cucumber-preprocessor");
+
+Given("I access PDP {string}", (product_reference) => {
     cy.get("@bag").then((bag) => {
         
         cy.log("i_access_PDP " + product_reference);

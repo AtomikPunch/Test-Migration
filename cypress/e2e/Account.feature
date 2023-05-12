@@ -1,7 +1,10 @@
-@All
-Feature: new duckduckgo.com
+@All @Account
+Feature: Account
 
-  @SC01
-  Scenario: I can create account from the header
-    When I visit duckduckgo.com
-    Then I search something
+  @AC01
+  Scenario: I can log-in with an existing account from the header
+    Given I access to the webstore
+    Then I access to the login page
+    Then I fill the login form "existing_client"
+    Then I submit the login form 
+    When I should be loggedin

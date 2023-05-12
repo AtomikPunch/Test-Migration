@@ -1,3 +1,6 @@
+const { Given, Then } = require("@badeball/cypress-cucumber-preprocessor");
+
+Given("I access to the webstore", () => {cy.i_access_to_the_webstore();})
 Cypress.Commands.add("i_access_to_the_webstore", () => {
     cy.get("@bag").then((bag) => {
         
@@ -7,6 +10,7 @@ Cypress.Commands.add("i_access_to_the_webstore", () => {
     });
 })
 
+Then("I access to the login page", () => {cy.i_access_to_the_login_page();})
 Cypress.Commands.add("i_access_to_the_login_page", () => {
     cy.get("@bag").then((bag) => {
         
@@ -14,16 +18,17 @@ Cypress.Commands.add("i_access_to_the_login_page", () => {
         bag.pages.home.signin_link.click();
         
         cy.origin(bag.environment.origins.auth, () => {
-            const { commonsPage } = Cypress.require('../../pages/commonsPage');
+            const { commonsPage } = Cypress.require('../../src/pages/commonsPage');
             const commons = new commonsPage();
                         
-            // #HACK : We should not have to accept th cookies twice 
+            //#HACK : We should not have to accept th cookies twice 
             commons.accept_cookies.click();
         });
     });
 
 })
 
+Then("I access to the registration page", () => {cy.i_access_to_the_registration_page();})
 Cypress.Commands.add("i_access_to_the_registration_page", () => {
     cy.get("@bag").then((bag) => {
         
@@ -31,9 +36,9 @@ Cypress.Commands.add("i_access_to_the_registration_page", () => {
         bag.pages.home.signin_link.click();
         
         cy.origin(bag.environment.origins.auth, () => {
-            const { commonsPage } = Cypress.require('../../pages/commonsPage');
+            const { commonsPage } = Cypress.require('../../src/pages/commonsPage');
             const commons = new commonsPage();
-            const { signonPage } = Cypress.require('../../pages/signonPage');
+            const { signonPage } = Cypress.require('../../src/pages/signonPage');
             const signon = new signonPage();
 
             // #HACK : We should not have to accept th cookies twice 

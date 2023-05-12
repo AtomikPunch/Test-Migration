@@ -1,8 +1,10 @@
+const { Given, Then, When } = require("@badeball/cypress-cucumber-preprocessor");
+
+Then("I fill the login form {string}", (client_reference) => {cy.i_fill_the_login_form(client_reference);})
 Cypress.Commands.add("i_fill_the_login_form", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference];
         bag.data.clients.last = client;
-
         cy.log("i_access_to_the_webstore as " + client_reference);
 
         bag.pages.signon.login.type(client.email);
@@ -10,6 +12,7 @@ Cypress.Commands.add("i_fill_the_login_form", (client_reference) => {
     });
 })
 
+Then("I submit the login form", () => {cy.i_submit_the_login_form();})
 Cypress.Commands.add("i_submit_the_login_form", () => {
     cy.get("@bag").then((bag) => {
         cy.log("i_submit_the_login_form");
@@ -25,7 +28,7 @@ Cypress.Commands.add("i_submit_the_login_form", () => {
     });
 })
 
-Cypress.Commands.add("i_should_be_loggedin", () => {
+When("I should be loggedin", () => {
     cy.get("@bag").then((bag) => {
         cy.log("i_should_be_loggedin");
         bag.pages.home.signin_link.should('have.class', 'ens-signin__text-icon--active');
