@@ -1,7 +1,7 @@
 import '../../src/api/services/jardiland-services';
 const { Given, Then ,When} = require("@badeball/cypress-cucumber-preprocessor");
 
-
+When("I go to checkout", () => {cy.i_go_to_checkout();})
 Cypress.Commands.add("i_go_to_checkout", () => {
     cy.get("@bag").then((bag) => {
         

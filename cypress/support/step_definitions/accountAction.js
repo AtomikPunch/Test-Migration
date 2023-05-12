@@ -74,6 +74,7 @@ Cypress.Commands.add("i_should_be_loggedin", () => {
     });
 })
 
+Then("I create a new account by filling form {string}", (client_reference) => {cy.i_create_a_new_account_by_filling_form(client_reference);})
 Cypress.Commands.add("i_create_a_new_account_by_filling_form", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference]

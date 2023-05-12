@@ -1,4 +1,4 @@
-const { Given, Then } = require("@badeball/cypress-cucumber-preprocessor");
+const { Given, Then, When } = require("@badeball/cypress-cucumber-preprocessor");
 
 Given('I access PDP {string}',(product_reference) => {cy.i_access_PDP(product_reference);})
 Cypress.Commands.add("i_access_PDP", (product_reference) => {
@@ -51,6 +51,7 @@ Cypress.Commands.add('i_access_to_cart_from_pop_up',() => {
     });
 })
 
+When("I continue shopping", () => {cy.i_continue_shopping();})
 Cypress.Commands.add('i_continue_shopping',() => {
     cy.get('@bag').then((bag)=> {
         bag.pages.product.continue_shopping.click();

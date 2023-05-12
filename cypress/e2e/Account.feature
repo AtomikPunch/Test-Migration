@@ -18,3 +18,15 @@ Feature: Account
     Then I access to the registration page
     Then I create a new account from header "last"
     When I should be loggedin
+
+  @AC04
+  Scenario: I can create account from checkout
+    Given Generate email random "new_client_checkout"
+    Given I will use client "new_client_checkout"
+    Given I access PDP "available_in_delivery"
+    Then I choose a store from header "main_store"
+    Then I add product to cart
+    When I continue shopping
+    Then I access cart from header
+    When I go to checkout
+    Then I create a new account by filling form "last"

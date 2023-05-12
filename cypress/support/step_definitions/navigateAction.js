@@ -69,6 +69,7 @@ Cypress.Commands.add("i_access_to_my_account", () => {
     });
 })
 
+Then("I access cart from header", () => {cy.i_access_cart_from_header();})
 Cypress.Commands.add("i_access_cart_from_header", () => {
     cy.get("@bag").then((bag) => {
         bag.pages.home.cart_link.click();
