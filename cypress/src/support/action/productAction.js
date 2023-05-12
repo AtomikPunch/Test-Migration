@@ -16,6 +16,7 @@ Cypress.Commands.add('i_choose_a_store_from_header', (store_reference) => {
         cy.wait(3000);
         bag.pages.product.postal_code_input.type('{enter}');
         bag.pages.product.first_store.should('be.visible').click();
+        bag.data.clients.last.store = store_reference;
     });
 })
 

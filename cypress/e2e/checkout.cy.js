@@ -32,12 +32,17 @@ describe('Checkout', () => {
 
     //CO01
     it('i can log-in from delivery page and come back to it', () => {
+        cy.i_will_use_client('existing_client');
+        cy.i_access_to_the_webstore();
+        cy.i_log_in('last');
+        cy.i_empty_the_cart_using_the_API();
+        cy.i_log_out();
         cy.i_access_PDP('available_in_delivery');
         cy.i_choose_a_store_from_header('main_store');
         cy.i_add_product_to_cart();
         cy.i_access_to_cart_from_pop_up();
         cy.i_go_to_checkout();
-        cy.i_fill_the_login_form('existing_client');
+        cy.i_fill_the_login_form('last');
         cy.i_submit_the_login_form();
         cy.i_verify_delivery_page_is_visible();
     });
@@ -87,31 +92,38 @@ describe('Checkout', () => {
 
     //CO05
     it('i can use my default delivery address as a known user', () => {
+        cy.i_will_use_client('existing_client');
+        cy.i_access_to_the_webstore();
+        cy.i_log_in('last');
+        cy.i_empty_the_cart_using_the_API();
+        cy.i_log_out();
         cy.i_access_PDP('available_in_delivery');
         cy.i_choose_a_store_from_header('main_store');
         cy.i_add_product_to_cart();
         cy.i_access_to_cart_from_pop_up();
         cy.i_go_to_checkout();
-        cy.i_fill_the_login_form('existing_client');
+        cy.i_fill_the_login_form('last');
         cy.i_submit_the_login_form();
         cy.i_verify_delivery_page_is_visible();
-        cy.i_verify_user_default_address('existing_client');
+        cy.i_verify_user_default_address('last');
     });
 
     //CO06 
     // TODO : il faut vider le panier du compte connu car après plusieurs relances l'article n'est plus disponible en quantité suffisante 
     it('i can modify address as a known user', () => {
+        cy.i_will_use_client('existing_client');
+        cy.i_access_to_the_webstore();
+        cy.i_log_in('last');
+        cy.i_empty_the_cart_using_the_API();
         cy.i_access_PDP('available_in_delivery');
         cy.i_choose_a_store_from_header('main_store');
         cy.i_add_product_to_cart();
         cy.i_continue_shopping();
         cy.i_access_cart_from_header();
         cy.i_go_to_checkout();
-        cy.i_fill_the_login_form('existing_client');
-        cy.i_submit_the_login_form();
         cy.i_verify_delivery_page_is_visible();
         //cy.clearCookies();
-        cy.i_add_new_delivery_address('existing_client');
+        cy.i_add_new_delivery_address('last');
         cy.i_verify_new_address_successfully_added();
     });
 
@@ -133,14 +145,16 @@ describe('Checkout', () => {
 
     //CO08
     it('i can pay with my credit card 3DS', () => {
+        cy.i_will_use_client('existing_client');
+        cy.i_access_to_the_webstore();
+        cy.i_log_in('last');
+        cy.i_empty_the_cart_using_the_API();
         cy.i_access_PDP('available_in_delivery');
         cy.i_choose_a_store_from_header('main_store');
         cy.i_add_product_to_cart();
         cy.i_continue_shopping();
         cy.i_access_cart_from_header();
         cy.i_go_to_checkout();
-        cy.i_fill_the_login_form('existing_client');
-        cy.i_submit_the_login_form();
         cy.i_verify_delivery_page_is_visible();
         cy.i_fill_payment_form('3DS_frictionless');
         cy.i_pay_for_my_order();
@@ -148,14 +162,16 @@ describe('Checkout', () => {
 
     //CO09
     it('i get an order validation from checkout and mail', () => {
+        cy.i_will_use_client('getnada_client');
+        cy.i_access_to_the_webstore();
+        cy.i_log_in('last');
+        cy.i_empty_the_cart_using_the_API();
         cy.i_access_PDP('available_in_delivery');
         cy.i_choose_a_store_from_header('main_store');
         cy.i_add_product_to_cart();
         cy.i_continue_shopping();
         cy.i_access_cart_from_header();
         cy.i_go_to_checkout();
-        cy.i_fill_the_login_form('getnada_client');
-        cy.i_submit_the_login_form();
         cy.i_verify_delivery_page_is_visible();
         cy.i_fill_payment_form('3DS_frictionless');
         cy.i_pay_for_my_order();

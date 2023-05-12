@@ -22,7 +22,8 @@
       "new_address": "8 rue des pirogues de bercy",
       "new_postal_code": "75012",
       "new_city": "Paris",
-      "new_number": "612345678"
+      "new_number": "612345678",
+      "store": "magasinweb"
     },
     "new_client_checkout": {
       "first_name": "Mathias",
@@ -34,14 +35,16 @@
       "new_address": "8 rue des pirogues de bercy",
       "new_postal_code": "75012",
       "new_city": "Paris",
-      "new_number": "612345678"
+      "new_number": "612345678",
+      "store": "magasinweb"  
     },
     "getnada_client": {
       "email": "testinvivo@getnada.com",
       "password": "BACc123!!",
       "uid": "",
       "subject": "Confirmation de votre commande Jardiland.com",
-      "sender": "no-reply@contact.enseignes.com"
+      "sender": "no-reply@contact.enseignes.com",
+      "store": "magasinweb"
     }
   },
 
@@ -143,12 +146,14 @@
     "Groslay": {
       "name": "Groslay",
       "postal_code": "95410",
-      "card_number": "188"
+      "slug_id": "groslay",
+      "store_id": "188"
     },
     "main_store": {
       "name": "Groslay",
       "postal_code": "95410",
-      "card_number": "188"
+      "slug_id": "groslay",
+      "store_id": "188"
     },
     "store_with_different_price": {
       "name": "Lieusaint",
