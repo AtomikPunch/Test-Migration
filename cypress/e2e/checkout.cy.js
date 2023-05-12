@@ -30,7 +30,6 @@ describe('Checkout', () => {
         });
     });
 
-    //CO01
     it('i can log-in from delivery page and come back to it', () => {
         cy.i_will_use_client('existing_client');
         cy.i_access_to_the_webstore();
@@ -160,7 +159,8 @@ describe('Checkout', () => {
         cy.i_pay_for_my_order();
     });
 
-    //CO09
+    // MISSING:
+    // - Check email content
     it('i get an order validation from checkout and mail', () => {
         cy.i_will_use_client('getnada_client');
         cy.i_access_to_the_webstore();

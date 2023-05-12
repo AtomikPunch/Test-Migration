@@ -70,13 +70,17 @@ Cypress.Commands.add("i_access_cart_from_header", () => {
     });
 })
 
-Cypress.Commands.add('i_access_PLP',() => {
+Cypress.Commands.add('i_access_PLP',(plp_reference) => {
     cy.get("@bag").then((bag) => {
         
         cy.log("i_access_PLP");
-        cy.visit(bag.environment.product_list_url);
-        bag.pages.commons.accept_cookies.click();
-        bag.pages.commons.close_choose_store.click();
+        cy.visit(bag.data.categories[plp_reference].url);
+        // #HACK : We should not have to accept th cookies twice 
+        cy.wait(3000);
+        cy.get('body').then((body) => {
+            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                bag.pages.commons.accept_cookies.click();
+        });
     });
 })
 
