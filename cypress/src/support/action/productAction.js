@@ -1,8 +1,9 @@
-Cypress.Commands.add("i_access_PDP", () => {
+Cypress.Commands.add("i_access_PDP", (product_reference) => {
     cy.get("@bag").then((bag) => {
         
-        cy.log("i_access_PDP");
-        cy.visit(bag.environment.product_url);
+        cy.log("i_access_PDP " + product_reference);
+        let product_url = bag.environment.product_url_prefix + bag.data.products[product_reference].id;
+        cy.visit(product_url);
         bag.pages.commons.accept_cookies.click();
     });
 })
@@ -15,6 +16,7 @@ Cypress.Commands.add('i_choose_a_store_from_header', (store_reference) => {
         cy.wait(3000);
         bag.pages.product.postal_code_input.type('{enter}');
         bag.pages.product.first_store.should('be.visible').click();
+        bag.data.clients.last.store = store_reference;
     });
 })
 

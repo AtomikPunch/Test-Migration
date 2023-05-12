@@ -1,16 +1,18 @@
-Cypress.Commands.add("i_go_to_checkin", () => {
+import '../../api/services/jardiland-services';
+
+Cypress.Commands.add("i_go_to_checkout", () => {
     cy.get("@bag").then((bag) => {
         
-        cy.log("i_go_to_checkin");
+        cy.log("i_go_to_checkout");
         bag.pages.cart.check_in.click();
 
-        cy.origin(bag.environment.origins.auth, () => {
-            const { commonsPage } = Cypress.require('../../pages/commonsPage');
-            const commons = new commonsPage();
+        // cy.origin(bag.environment.origins.auth, () => {
+        //     const { commonsPage } = Cypress.require('../../pages/commonsPage');
+        //     const commons = new commonsPage();
                         
-            // #HACK : We should not have to accept th cookies twice 
-            commons.accept_cookies.click();
-        });
+        //     // #HACK : We should not have to accept th cookies twice 
+        //     commons.accept_cookies.click();
+        // });
     });
 })
 
@@ -134,6 +136,21 @@ Cypress.Commands.add('i_verify_total_changed', (product_reference) => {
         let product = bag.data.product[product_reference];
         bag.pages.cart.total_price.invoke('text').then((text) => {
             expect(text.trim().replace(/\u00a0/g, ' ')).not.equal(product.price)
+        });
+    });
+})
+
+Cypress.Commands.add('i_empty_the_cart_using_the_API', () => {
+    cy.get('@bag').then((bag) => {
+        cy.INVIVO_API_get_cart(bag.data.clients.last).then((cart) => {
+            bag.data.clients.last.cart = cart;
+            let cart_id = bag.data.clients.last.cart.id;
+            let cart_lines = bag.data.clients.last.cart.lines;
+            cart_lines.forEach((cart_line) => {
+                cy.INVIVO_API_remove_cart_line(bag.data.clients.last, cart_id, cart_line).then((response) => {
+                    bag.data.clients.last.cart = response;
+                });
+            });
         });
     });
 })

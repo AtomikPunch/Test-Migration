@@ -1,9 +1,24 @@
+Cypress.Commands.add("i_will_use_client", (client_reference) => {
+    cy.get("@bag").then((bag) => {
+        let client = bag.data.clients[client_reference];
+        bag.data.clients.last = client;
+        console.log("WILL USE " + JSON.stringify(bag.data.clients.last));
+    });
+})
+
+Cypress.Commands.add("i_log_in", (client_reference) => {
+    cy.i_access_to_the_login_page();
+    cy.i_fill_the_login_form(client_reference);
+    cy.i_submit_the_login_form();
+})
+
 Cypress.Commands.add("i_fill_the_login_form", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference];
         bag.data.clients.last = client;
+        console.log("LOG WITH " + JSON.stringify(bag.data.clients.last));
 
-        cy.log("i_access_to_the_webstore as " + client_reference);
+        cy.log("i_fill_the_login_form as " + client_reference);
 
         bag.pages.signon.login.type(client.email);
         bag.pages.signon.password.type(client.password);
@@ -22,6 +37,16 @@ Cypress.Commands.add("i_submit_the_login_form", () => {
             // #HACK : We should not have to accept th cookies twice 
             bag.pages.commons.accept_cookies.click();
         });
+    });
+})
+
+Cypress.Commands.add("i_log_out", () => {
+    cy.get("@bag").then((bag) => {
+        cy.visit(bag.environment.start_url + 'mon-compte/mes-commandes');
+        // #HACK : We should not have to accept th cookies twice 
+        bag.pages.commons.accept_cookies.click();
+        bag.pages.account.logout.click();
+        bag.pages.home.signin_link.should('be.visible');
     });
 })
 

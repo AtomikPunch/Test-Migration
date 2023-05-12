@@ -27,4 +27,8 @@ exports.accountPage = class accountPage {
     get successfulConnexion() {
         return cy.get('[data-cy="ens-global-alert"] > .idf-text-icon', { timeout: 5000 });
     }
+
+    get logout() {
+        return cy.get('a[href$="#logout-user"]', { timeout: 5000 });
+    }
 }
