@@ -49,6 +49,12 @@
   },
 
 
+  "categories": {
+    "standard_category": {
+      "url": "https://www.jd-test.invivodigitalfactory.com/c/gazon"
+    }
+  },
+
 
   "products": {
     "existing_product": {
@@ -158,17 +164,17 @@
     "store_with_different_price": {
       "name": "Lieusaint",
       "postal_code": "77127",
-      "card_number": "15"
+      "store_id": "15"
     },
     "store_with_promotion": {
       "name": "Gometz-le-Châtel",
       "postal_code": "91940",
-      "card_number": "227"
+      "store_id": "227"
     },
     "unavailable_product": {
       "name": "Vernouillet",
       "postal_code": "78540",
-      "card_number": "137"
+      "store_id": "137"
     }
   },
 
