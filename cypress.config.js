@@ -14,9 +14,13 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   e2e: {
+    baseUrl: 'https://www.jardiland.com/',
+    chromeWebSecurity: false,
+    defaultCommandTimeout: 5000,
     specPattern: "**/*.feature",
     stepdefinitions: "**/support/step_definitions/**/*.js",
     fixturesFolder: 'cypress/resources',
+    experimentalOriginDependencies: true,
     setupNodeEvents, 
   },
   /*reporter: 'mochawesome',
