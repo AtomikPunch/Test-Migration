@@ -6,7 +6,14 @@ Cypress.Commands.add("i_access_to_the_webstore", () => {
         
         cy.log("i_access_to_the_webstore");
         cy.visit(bag.environment.start_url);
-        bag.pages.commons.accept_cookies.click();
+        
+        // #HACK : We should not have to accept th cookies twice 
+        cy.wait(3000);
+        cy.get('body').then((body) => {
+            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                bag.pages.commons.accept_cookies.click();
+        });
+
     });
 })
 
@@ -20,9 +27,13 @@ Cypress.Commands.add("i_access_to_the_login_page", () => {
         cy.origin(bag.environment.origins.auth, () => {
             const { commonsPage } = Cypress.require('../../src/pages/commonsPage');
             const commons = new commonsPage();
-                        
-            //#HACK : We should not have to accept th cookies twice 
-            commons.accept_cookies.click();
+            
+            // #HACK : We should not have to accept th cookies twice 
+            cy.wait(3000);
+            cy.get('body').then((body) => {
+                if (body.find(commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                    commons.accept_cookies.click();
+            });
         });
     });
 
@@ -42,7 +53,11 @@ Cypress.Commands.add("i_access_to_the_registration_page", () => {
             const signon = new signonPage();
 
             // #HACK : We should not have to accept th cookies twice 
-            commons.accept_cookies.click();
+            cy.wait(3000);
+            cy.get('body').then((body) => {
+                if (body.find(commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                    commons.accept_cookies.click();
+            });
             signon.access_to_account_registration.trigger('click');
         });
     });
