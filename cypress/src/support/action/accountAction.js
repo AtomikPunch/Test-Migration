@@ -19,7 +19,6 @@ Cypress.Commands.add("i_fill_the_login_form", (client_reference) => {
         console.log("LOG WITH " + JSON.stringify(bag.data.clients.last));
 
         cy.log("i_fill_the_login_form as " + client_reference);
-
         bag.pages.signon.login.type(client.email);
         bag.pages.signon.password.type(client.password);
     });
@@ -35,7 +34,11 @@ Cypress.Commands.add("i_submit_the_login_form", () => {
         cy.wait("@loginResponse").then((intercept) => {
             bag.data.clients.last.access_token = intercept.response.body.access_token;
             // #HACK : We should not have to accept th cookies twice 
-            bag.pages.commons.accept_cookies.click();
+            cy.wait(3000);
+            cy.get('body').then((body) => {
+                if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                    bag.pages.commons.accept_cookies.click();
+            });
         });
     });
 })
@@ -43,8 +46,14 @@ Cypress.Commands.add("i_submit_the_login_form", () => {
 Cypress.Commands.add("i_log_out", () => {
     cy.get("@bag").then((bag) => {
         cy.visit(bag.environment.start_url + 'mon-compte/mes-commandes');
+        
         // #HACK : We should not have to accept th cookies twice 
-        bag.pages.commons.accept_cookies.click();
+        cy.wait(3000);
+        cy.get('body').then((body) => {
+            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                bag.pages.commons.accept_cookies.click();
+        });
+
         bag.pages.account.logout.click();
         bag.pages.home.signin_link.should('be.visible');
     });
@@ -61,6 +70,7 @@ Cypress.Commands.add("i_create_a_new_account_by_filling_form", (client_reference
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference]
         cy.log("i_create_a_new_account");
+
         bag.pages.cart.create_new_account.trigger('click');
         bag.pages.account.first_name_input.clear().type(client.first_name);
         bag.pages.account.last_name_input.type(client.last_name);
@@ -70,7 +80,11 @@ Cypress.Commands.add("i_create_a_new_account_by_filling_form", (client_reference
         bag.pages.account.successfulConnexion.should('exist');
 
         // #HACK : We should not have to accept th cookies twice 
-        bag.pages.commons.accept_cookies.click();
+        cy.wait(3000);
+        cy.get('body').then((body) => {
+            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                bag.pages.commons.accept_cookies.click();
+        });
     });
 })
 
@@ -85,7 +99,11 @@ Cypress.Commands.add("i_create_a_new_account_from_header", (client_reference) =>
         bag.pages.account.submit_account_creation.click();
 
         // #HACK : We should not have to accept th cookies twice 
-        bag.pages.commons.accept_cookies.click();
+        cy.wait(3000);
+        cy.get('body').then((body) => {
+            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                bag.pages.commons.accept_cookies.click();
+        });
     })
 })
 

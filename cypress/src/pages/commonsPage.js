@@ -5,6 +5,11 @@ exports.commonsPage = class commonsPage{
         return cy.get('#axeptio_overlay #axeptio_btn_acceptAll', {timeout : 5000});
     }
 
+    get accept_cookies_selector(){
+        // #HACK should get timeout from a config file
+        return '#axeptio_overlay #axeptio_btn_acceptAll';
+    }
+
     get close_choose_store(){
         return cy.get('.idf-modal__header__close', {timeout : 5000});
     }
