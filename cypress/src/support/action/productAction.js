@@ -4,7 +4,14 @@ Cypress.Commands.add("i_access_PDP", (product_reference) => {
         cy.log("i_access_PDP " + product_reference);
         let product_url = bag.environment.product_url_prefix + bag.data.products[product_reference].id;
         cy.visit(product_url);
-        bag.pages.commons.accept_cookies.click();
+
+        // #HACK : We should not have to accept th cookies twice 
+        cy.wait(3000);
+        cy.get('body').then((body) => {
+            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                bag.pages.commons.accept_cookies.click();
+        });
+
     });
 })
 

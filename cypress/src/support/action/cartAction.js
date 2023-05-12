@@ -6,13 +6,12 @@ Cypress.Commands.add("i_go_to_checkout", () => {
         cy.log("i_go_to_checkout");
         bag.pages.cart.check_in.click();
 
-        // cy.origin(bag.environment.origins.auth, () => {
-        //     const { commonsPage } = Cypress.require('../../pages/commonsPage');
-        //     const commons = new commonsPage();
-                        
-        //     // #HACK : We should not have to accept th cookies twice 
-        //     commons.accept_cookies.click();
-        // });
+        // #HACK : We should not have to accept th cookies twice 
+        cy.wait(3000);
+        cy.get('body').then((body) => {
+            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                bag.pages.commons.accept_cookies.click();
+        });
     });
 })
 
