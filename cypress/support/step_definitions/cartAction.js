@@ -17,7 +17,7 @@ Cypress.Commands.add("i_go_to_checkout", () => {
     });
 })
 
-When("I choose to register an account from the checkout", () => {})
+When("I choose to register an account from the checkout", () => {cy.i_choose_to_register_from_checkout();})
 Cypress.Commands.add("i_choose_to_register_from_checkout", () => { 
     cy.get('@bag').then((bag) => {
         bag.pages.cart.create_new_account.trigger('click');
