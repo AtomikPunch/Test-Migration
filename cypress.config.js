@@ -13,6 +13,8 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = defineConfig({
+  video: false,
+  numTestsKeptInMemory: 1,
   e2e: {
     baseUrl: 'https://www.jardiland.com/',
     chromeWebSecurity: false,
@@ -22,14 +24,5 @@ module.exports = defineConfig({
     fixturesFolder: 'cypress/resources',
     experimentalOriginDependencies: true,
     setupNodeEvents, 
-  },
-  /*reporter: 'mochawesome',
-  "reporterOptions": {
-    "charts": true,
-    "reportDir": "cypress/reports",
-    "reportFilename": "report",
-    "overwrite": false,
-    "html": false,
-    "json": true
-  }*/
+  }
 });
