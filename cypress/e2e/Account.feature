@@ -12,12 +12,13 @@ Feature: Account
 
   @AC03
   Scenario: I can create account from the header
-    Given Generate email random "new_client"
-    Given I will use a client "new_client"
-    Given I access to the webstore
-    Then I access to the registration page
-    Then I create a new account from header "last"
-    When I should be loggedin
+    Given I generate a random email for the client "without_account"
+    And I will use a client "without_account"
+    And I access to the webstore
+    When I access to the registration page
+    And I fill the account registration form
+    And I submit the account registration form
+    Then I should be loggedin
 
   @AC04
   Scenario: I can create account from checkout
