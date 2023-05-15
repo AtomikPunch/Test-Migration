@@ -82,6 +82,13 @@ Cypress.Commands.add("i_fill_the_registration_form", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference]
         
+        // #HACK : We should not have to accept th cookies twice 
+        cy.wait(3000);
+        cy.get('body').then((body) => {
+            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                bag.pages.commons.accept_cookies.click();
+        });
+        
         bag.pages.account.first_name_input.clear().type(client.first_name);
         bag.pages.account.last_name_input.type(client.last_name);
         bag.pages.account.email_input.type(client.email);
