@@ -1,6 +1,6 @@
 const { Given, Then ,When} = require("@badeball/cypress-cucumber-preprocessor");
 
-Given("I will use client {string}", (client_reference) => {cy.i_will_use_client(client_reference);})
+Given("I will use a client {string}", (client_reference) => {cy.i_will_use_client(client_reference);})
 Cypress.Commands.add("i_will_use_client", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference];
@@ -9,14 +9,16 @@ Cypress.Commands.add("i_will_use_client", (client_reference) => {
     });
 })
 
-Then("I log in {string}", (client_reference) => {cy.i_log_in(client_reference);})
+Then("I log in as a client {string}", (client_reference) => {cy.i_log_in(client_reference);})
+Then("I log in", (client_reference) => {cy.i_log_in("last");})
 Cypress.Commands.add("i_log_in", (client_reference) => {
     cy.i_access_to_the_login_page();
     cy.i_fill_the_login_form(client_reference);
     cy.i_submit_the_login_form();
 })
 
-Then("I fill the login form {string}", (client_reference) => {cy.i_fill_the_login_form(client_reference);})
+Then("I fill the login form for a client {string}", (client_reference) => {cy.i_fill_the_login_form(client_reference);})
+Then("I fill the login form", (client_reference) => {cy.i_fill_the_login_form("last");})
 Cypress.Commands.add("i_fill_the_login_form", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference];

@@ -1,6 +1,6 @@
 {
   "clients": {
-    "existing_client": {
+    "with_existing_account": {
       "email": "test.jardilandTESTO1@yopmail.com",
       "password": "34P96YkLV33f@",
       "default_address": "4 rue jean moulin",
