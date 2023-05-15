@@ -1,10 +1,9 @@
 const { Given, Then, When } = require("@badeball/cypress-cucumber-preprocessor");
 
-Given('I access PDP {string}',(product_reference) => {cy.i_access_PDP(product_reference);})
+Given('I access to the PDP of a product {string}',(product_reference) => {cy.i_access_PDP(product_reference);})
 Cypress.Commands.add("i_access_PDP", (product_reference) => {
     cy.get("@bag").then((bag) => {
         
-        cy.log("i_access_PDP " + product_reference);
         let product_url = bag.environment.product_url_prefix + bag.data.products[product_reference].id;
         cy.visit(product_url);
 
@@ -15,10 +14,11 @@ Cypress.Commands.add("i_access_PDP", (product_reference) => {
                 bag.pages.commons.accept_cookies.click();
         });
 
+        cy.screenshot({overwrite: true});
     });
 })
 
-Then("I choose a store from header {string}", (product_reference) => {cy.i_choose_a_store_from_header(product_reference)})
+Then("I choose the store {string} from header", (product_reference) => {cy.i_choose_a_store_from_header(product_reference)})
 Cypress.Commands.add('i_choose_a_store_from_header', (store_reference) => {
     cy.get("@bag").then((bag) => {
         let store = bag.data.store[store_reference];
@@ -31,7 +31,7 @@ Cypress.Commands.add('i_choose_a_store_from_header', (store_reference) => {
     });
 })
 
-Then("I add product to cart", () => {cy.i_add_product_to_cart();})
+Then("I add the product to the cart selecting the home delivery offer", () => {cy.i_add_product_to_cart();})
 Cypress.Commands.add('i_add_product_to_cart',() => {
     cy.get('@bag').then((bag) => {
         bag.pages.product.add_to_cart_button.should('be.visible').click();

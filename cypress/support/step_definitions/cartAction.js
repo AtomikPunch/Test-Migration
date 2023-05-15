@@ -1,14 +1,14 @@
 import '../../src/api/services/jardiland-services';
 const { Given, Then ,When} = require("@badeball/cypress-cucumber-preprocessor");
 
-When("I go to checkout", () => {cy.i_go_to_checkout();})
+When("I go to the checkout", () => {cy.i_go_to_checkout();})
 Cypress.Commands.add("i_go_to_checkout", () => {
     cy.get("@bag").then((bag) => {
         
         cy.log("i_go_to_checkout");
         bag.pages.cart.check_in.click();
 
-        // #HACK : We should not have to accept th cookies twice 
+        // #HACK : We should not have to accept th cookies twice
         cy.wait(3000);
         cy.get('body').then((body) => {
             if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
@@ -17,6 +17,12 @@ Cypress.Commands.add("i_go_to_checkout", () => {
     });
 })
 
+When("I choose to register an account from the checkout", () => {})
+Cypress.Commands.add("i_choose_to_register_from_checkout", () => { 
+    cy.get('@bag').then((bag) => {
+        bag.pages.cart.create_new_account.trigger('click');
+    }); 
+})
 
 Cypress.Commands.add("i_verify_checkbox_checked", () => { 
     cy.get('@bag').then((bag) => { 
