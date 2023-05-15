@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  numTestsKeptInMemory: 1,
   e2e: {
     baseUrl: 'https://www.jardiland.com/',
     chromeWebSecurity: false,

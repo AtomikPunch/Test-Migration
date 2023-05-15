@@ -16,9 +16,13 @@ Cypress.Commands.add("i_fill_the_login_form", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference];
         bag.data.clients.last = client;
-        console.log("LOG WITH " + JSON.stringify(bag.data.clients.last));
 
-        cy.log("i_fill_the_login_form as " + client_reference);
+        // #HACK : We should not have to accept th cookies twice 
+        cy.wait(3000);
+        cy.get('body').then((body) => {
+            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                bag.pages.commons.accept_cookies.click();
+        });
         bag.pages.signon.login.type(client.email);
         bag.pages.signon.password.type(client.password);
     });
