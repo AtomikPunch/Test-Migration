@@ -55,7 +55,7 @@ Cypress.Commands.add("i_verify_user_default_address", (client_reference) => {
     });
 })
 
-Then("I verify delivery page is visible", () => {cy.i_verify_delivery_page_is_visible();})
+When("Je vérifie que la page de livraison est visible", () => {cy.i_verify_delivery_page_is_visible();})
 Cypress.Commands.add("i_verify_delivery_page_is_visible",() =>{
     cy.get('@bag').then((bag) => {
         cy.log("i_verify_delivery_page_is_visible");

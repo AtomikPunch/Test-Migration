@@ -44,7 +44,7 @@ Cypress.Commands.add('i_pick_up_product_in_store',()=> {
     });
 })
 
-Then("I access to cart from pop up", () => {cy.i_access_to_cart_from_pop_up();})
+Then("J'accède au panier depuis la pop-up", () => {cy.i_access_to_cart_from_pop_up();})
 Cypress.Commands.add('i_access_to_cart_from_pop_up',() => {
     cy.get('@bag').then((bag) => {
         bag.pages.product.access_to_cart.click();
