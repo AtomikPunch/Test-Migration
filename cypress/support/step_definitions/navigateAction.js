@@ -1,6 +1,6 @@
 const { Given, Then } = require("@badeball/cypress-cucumber-preprocessor");
 
-Given("I access to the webstore", () => {cy.i_access_to_the_webstore();})
+Given("J'accede au site web", () => {cy.i_access_to_the_webstore();})
 Cypress.Commands.add("i_access_to_the_webstore", () => {
     cy.get("@bag").then((bag) => {
         
@@ -17,7 +17,7 @@ Cypress.Commands.add("i_access_to_the_webstore", () => {
     });
 })
 
-Then("I access to the login page", () => {cy.i_access_to_the_login_page();})
+Then("J'accede à la page de connection", () => {cy.i_access_to_the_login_page();})
 Cypress.Commands.add("i_access_to_the_login_page", () => {
     cy.get("@bag").then((bag) => {
         
@@ -39,7 +39,7 @@ Cypress.Commands.add("i_access_to_the_login_page", () => {
 
 })
 
-Then("I access to the registration page", () => {cy.i_access_to_the_registration_page();})
+Then("J'accede à la page de création de compte", () => {cy.i_access_to_the_registration_page();})
 Cypress.Commands.add("i_access_to_the_registration_page", () => {
     cy.get("@bag").then((bag) => {
         
@@ -69,7 +69,7 @@ Cypress.Commands.add("i_access_to_my_account", () => {
     });
 })
 
-Then("I access to the cart from the header", () => {cy.i_access_cart_from_header();})
+Then("J'accede au panier depuis le header", () => {cy.i_access_cart_from_header();})
 Cypress.Commands.add("i_access_cart_from_header", () => {
     cy.get("@bag").then((bag) => {
         bag.pages.home.cart_link.click();

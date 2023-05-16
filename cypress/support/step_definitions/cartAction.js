@@ -1,7 +1,7 @@
 import '../../src/api/services/jardiland-services';
 const { Given, Then ,When} = require("@badeball/cypress-cucumber-preprocessor");
 
-When("I go to the checkout", () => {cy.i_go_to_checkout();})
+When("J'accede au checkout", () => {cy.i_go_to_checkout();})
 Cypress.Commands.add("i_go_to_checkout", () => {
     cy.get("@bag").then((bag) => {
         
@@ -14,10 +14,24 @@ Cypress.Commands.add("i_go_to_checkout", () => {
             if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
                 bag.pages.commons.accept_cookies.click();
         });
+
+        cy.origin(bag.environment.origins.auth, () => {
+            const { commonsPage } = Cypress.require('../../src/pages/commonsPage');
+            const commons = new commonsPage();
+            const { signonPage } = Cypress.require('../../src/pages/signonPage');
+            const signon = new signonPage();
+
+            // #HACK : We should not have to accept th cookies twice 
+            cy.wait(3000);
+            cy.get('body').then((body) => {
+                if (body.find(commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                    commons.accept_cookies.click();
+            });
+        });
     });
 })
 
-When("I choose to register an account from the checkout", () => {cy.i_choose_to_register_from_checkout();})
+When("Je choisis de créer un compte depuis le checkout", () => {cy.i_choose_to_register_from_checkout();})
 Cypress.Commands.add("i_choose_to_register_from_checkout", () => { 
     cy.get('@bag').then((bag) => {
         bag.pages.cart.create_new_account.trigger('click');
@@ -41,6 +55,7 @@ Cypress.Commands.add("i_verify_user_default_address", (client_reference) => {
     });
 })
 
+Then("I verify delivery page is visible", () => {cy.i_verify_delivery_page_is_visible();})
 Cypress.Commands.add("i_verify_delivery_page_is_visible",() =>{
     cy.get('@bag').then((bag) => {
         cy.log("i_verify_delivery_page_is_visible");
@@ -89,6 +104,7 @@ const getIframe = (card_reference , iframe, test) => {
 }
 
 
+Then("I fill payment form using {string}", (card_reference) => {cy.i_fill_payment_form(card_reference);})
 Cypress.Commands.add("i_fill_payment_form", (card_reference) =>{
     cy.get('@bag').then((bag) => {
         let card = bag.data.credit_card[card_reference];
@@ -102,6 +118,7 @@ Cypress.Commands.add("i_fill_payment_form", (card_reference) =>{
     });
 });
 
+Then("I pay for my order", () => {cy.i_pay_for_my_order();})
 Cypress.Commands.add('i_pay_for_my_order', () => {
     cy.get('@bag').then((bag) => {
         cy.log("i_pay_for_my_order");
@@ -147,7 +164,7 @@ Cypress.Commands.add('i_verify_total_changed', (product_reference) => {
     });
 })
 
-Then("I empty the cart using the API", () => {cy.i_empty_the_cart_using_the_API();})
+Then("Je vide le panier en utilisant une API", () => {cy.i_empty_the_cart_using_the_API();})
 Cypress.Commands.add('i_empty_the_cart_using_the_API', () => {
     cy.get('@bag').then((bag) => {
         cy.INVIVO_API_get_cart(bag.data.clients.last).then((cart) => {

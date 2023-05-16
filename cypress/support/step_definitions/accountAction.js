@@ -1,6 +1,6 @@
 const { Given, Then ,When, attach} = require("@badeball/cypress-cucumber-preprocessor");
 
-Given("I will use a client {string}", (client_reference) => {cy.i_will_use_client(client_reference);})
+Given("Je vais utiliser un client {string}", (client_reference) => {cy.i_will_use_client(client_reference);})
 Cypress.Commands.add("i_will_use_client", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference];
@@ -9,16 +9,16 @@ Cypress.Commands.add("i_will_use_client", (client_reference) => {
     });
 })
 
-Then("I log in as a client {string}", (client_reference) => {cy.i_log_in(client_reference);})
-Then("I log in", () => {cy.i_log_in("last");})
+Then("Je me connecte en tant que client {string}", (client_reference) => {cy.i_log_in(client_reference);})
+Then("Je me connecte", () => {cy.i_log_in("last");})
 Cypress.Commands.add("i_log_in", (client_reference) => {
     cy.i_access_to_the_login_page();
     cy.i_fill_the_login_form(client_reference);
     cy.i_submit_the_login_form();
 })
 
-Then("I fill the login form for a client {string}", (client_reference) => {cy.i_fill_the_login_form(client_reference);})
-Then("I fill the login form", () => {cy.i_fill_the_login_form("last");})
+Then("je remplis le formulaire de connection pour un client {string}", (client_reference) => {cy.i_fill_the_login_form(client_reference);})
+Then("Je remplis le formulaire de connection", () => {cy.i_fill_the_login_form("last");})
 Cypress.Commands.add("i_fill_the_login_form", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference];
@@ -31,7 +31,7 @@ Cypress.Commands.add("i_fill_the_login_form", (client_reference) => {
     });
 })
 
-Then("I submit the login form", () => {cy.i_submit_the_login_form();})
+Then("Je soumets le formulaire de connection", () => {cy.i_submit_the_login_form();})
 Cypress.Commands.add("i_submit_the_login_form", () => {
     cy.get("@bag").then((bag) => {
         cy.log("i_submit_the_login_form");
@@ -51,7 +51,7 @@ Cypress.Commands.add("i_submit_the_login_form", () => {
     });
 })
 
-When("I log out", () => {cy.i_log_out();})
+When("Je me deconnecte", () => {cy.i_log_out();})
 Cypress.Commands.add("i_log_out", () => {
     cy.get("@bag").then((bag) => {
         cy.visit(bag.environment.start_url + 'mon-compte/mes-commandes');
@@ -68,7 +68,7 @@ Cypress.Commands.add("i_log_out", () => {
     });
 })
 
-When("I should be loggedin", () => {cy.i_should_be_loggedin();})
+When("Je devrais etre connecté", () => {cy.i_should_be_loggedin();})
 Cypress.Commands.add("i_should_be_loggedin", () => {
     cy.get("@bag").then((bag) => {
         cy.log("i_should_be_loggedin");
@@ -77,7 +77,7 @@ Cypress.Commands.add("i_should_be_loggedin", () => {
 })
 
 Then("I create a new account by filling form {string}", (client_reference) => {cy.i_fill_the_registration_form(client_reference);})
-Then("I fill the account registration form", () => {cy.i_fill_the_registration_form("last");})
+Then("Je remplis le formulaire de création de compte", () => {cy.i_fill_the_registration_form("last");})
 Cypress.Commands.add("i_fill_the_registration_form", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference]
@@ -90,7 +90,7 @@ Cypress.Commands.add("i_fill_the_registration_form", (client_reference) => {
     });
 })
 
-Then("I submit the account registration form", () => {cy.i_submit_the_registration_form("last");})
+Then("Je soumets le formulaire de création de compte", () => {cy.i_submit_the_registration_form("last");})
 Cypress.Commands.add("i_submit_the_registration_form", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference]
@@ -107,7 +107,7 @@ Cypress.Commands.add("i_submit_the_registration_form", (client_reference) => {
     });
 })
 
-Given("I generate a random email for the client {string}", (client_reference) => {cy.generate_email_random(client_reference);})
+Given("Je genere un email aléatoire pour un client {string}", (client_reference) => {cy.generate_email_random(client_reference);})
 Cypress.Commands.add("generate_email_random", (client_reference) => {
     function generateRandomEmail() {
         const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';

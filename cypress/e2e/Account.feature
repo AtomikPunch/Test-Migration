@@ -2,35 +2,51 @@
 Feature: Account
 
   @AC01
-  Scenario: I can log-in with an existing account from the header
-    Given I will use a client "with_existing_account"
-    And I access to the webstore
-    When I access to the login page
-    And I fill the login form
-    And I submit the login form 
-    Then I should be loggedin
+  Scenario: Un client peut se connecter depuis le header
+    Given Je vais utiliser un client "with_existing_account"
+    And J'accede au site web
+    When J'accede à la page de connection
+    And Je remplis le formulaire de connection
+    And Je soumets le formulaire de connection
+    Then Je devrais etre connecté
+
+  @AC02
+  Scenario: Un client peut se connecter depuis le checkout
+    Given Je vais utiliser un client "with_existing_account"
+    And J'accede au site web
+    And Je me connecte
+    Then Je vide le panier en utilisant une API
+    Then Je me deconnecte
+    And J'accede à la PDP d'un produit "available_in_delivery"
+    And Je choisis le magasin "main_store" depuis le header
+    And J'ajoute le produit au panier en selectionnant l'option de livraison à domicile
+    And Je continue mes achats
+    And J'accede au panier depuis le header
+    And J'accede au checkout
+    And Je remplis le formulaire de connection
+    And Je soumets le formulaire de connection 
 
   @AC03
-  Scenario: I can create account from the header
-    Given I generate a random email for the client "without_account"
-    And I will use a client "without_account"
-    And I access to the webstore
-    When I access to the registration page
-    And I fill the account registration form
-    And I submit the account registration form
-    Then I should be loggedin
+  Scenario: Un client peut créer un compte depuis le header
+    Given Je genere un email aléatoire pour un client "without_account"
+    And Je vais utiliser un client "without_account"
+    And J'accede au site web
+    When J'accede à la page de création de compte
+    And Je remplis le formulaire de création de compte
+    And Je soumets le formulaire de création de compte
+    Then Je devrais etre connecté
 
   @AC04
-  Scenario: I can create account from checkout
-    Given I generate a random email for the client "without_account"
-    And I will use a client "without_account"
-    And I access to the webstore
-    And I access to the PDP of a product "available_in_delivery"
-    And I choose the store "main_store" from header
-    And I add the product to the cart selecting the home delivery offer
-    And I continue shopping
-    And I access to the cart from the header
-    And I go to the checkout
-    When I choose to register an account from the checkout
-    And I fill the account registration form
-    And I submit the account registration form
+  Scenario: Un client peut créer un compte depuis le checkout
+    Given Je genere un email aléatoire pour un client "without_account"
+    And Je vais utiliser un client "without_account"
+    And J'accede au site web
+    And J'accede à la PDP d'un produit "available_in_delivery"
+    And Je choisis le magasin "main_store" depuis le header
+    And J'ajoute le produit au panier en selectionnant l'option de livraison à domicile
+    And Je continue mes achats
+    And J'accede au panier depuis le header
+    And J'accede au checkout
+    When Je choisis de créer un compte depuis le checkout
+    And Je remplis le formulaire de création de compte
+    And Je soumets le formulaire de création de compte
