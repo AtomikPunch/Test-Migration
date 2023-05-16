@@ -1,6 +1,6 @@
 {
   "clients": {
-    "with_existing_account": {
+    "avec_un_compte_existant": {
       "email": "test.jardilandTESTO1@yopmail.com",
       "password": "34P96YkLV33f@",
       "default_address": "4 rue jean moulin",
@@ -12,7 +12,7 @@
       "new_number": "612345677",
       "store": "magasinweb"
     },
-    "without_account": {
+    "sans_compte": {
       "first_name": "Mathieu",
       "last_name": "Auto",
       "email": "test.NyRXcEKYC0@getnada.com",
@@ -25,7 +25,7 @@
       "new_number": "612345678",
       "store": "magasinweb"
     },
-    "new_client_checkout": {
+    "nouveau_client_depuis_le_checkout": {
       "first_name": "Mathias",
       "last_name": "Auto",
       "email": "test.gHFNhCE0I8@getnada.com",
@@ -51,7 +51,7 @@
 
 
   "products": {
-    "existing_product": {
+    "produit_disponible": {
       "id": "2068566",
       "name": "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
       "price": "64,99 €",
@@ -66,7 +66,7 @@
         "category": "gazon-rustique"
       }
     },
-    "available_in_delivery": {
+    "disponible_en_livraison": {
       "id": "2068566",
       "name": "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
       "price": "64,99 €",
@@ -81,7 +81,7 @@
         "category": "gazon-rustique"
       }
     },
-    "available_in_pickup": {
+    "disponible_en_pickup": {
       "id": "2068566",
       "name": "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
       "price": "64,99 €",
@@ -96,7 +96,7 @@
         "category": "gazon-rustique"
       }
     },
-    "available_in_pickup_and_delivery": {
+    "disponible_en_livraison_et_en_pickup": {
       "id": "2068566",
       "name": "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
       "price": "64,99 €",
@@ -149,23 +149,23 @@
       "slug_id": "groslay",
       "store_id": "188"
     },
-    "main_store": {
+    "magasin_principal": {
       "name": "Groslay",
       "postal_code": "95410",
       "slug_id": "groslay",
       "store_id": "188"
     },
-    "store_with_different_price": {
+    "magasin_avec_différent_prix": {
       "name": "Lieusaint",
       "postal_code": "77127",
       "card_number": "15"
     },
-    "store_with_promotion": {
+    "magasin_avec_promotion": {
       "name": "Gometz-le-Châtel",
       "postal_code": "91940",
       "card_number": "227"
     },
-    "unavailable_product": {
+    "produit_non_disponible": {
       "name": "Vernouillet",
       "postal_code": "78540",
       "card_number": "137"
