@@ -12,3 +12,9 @@ Feature: Shop
     Given J'accede à la PDP d'un produit "disponible_en_livraison"
     And J'accède au choix du magasin à partir de la PDP
     Then Je remplis la recherche de magasin avec "Groslay"
+
+  @SH03
+  Scenario: Un client peut rechercher un magasin depuis la PLP
+    Given J'accède à la PLP
+    And J'accède au choix du magasin à partir de la PLP
+    Then Je remplis la recherche de magasin avec "Groslay"

@@ -6,6 +6,7 @@ const { cartPage } = require('../../../src/pages/cartPage');
 const { accountPage } = require('../../../src/pages/accountPage');
 const { deliveryPage } = require('../../../src/pages/deliveryPage');
 const { paymentPage } = require('../../../src/pages/paymentPage');
+const { listPage } = require('../../../src/pages/listPage');
 
 beforeEach(() => {
   cy.log("This will run before every scenario");
@@ -22,7 +23,8 @@ beforeEach(() => {
               "cart": new cartPage(),
               "account": new accountPage(),
               "delivery": new deliveryPage(),
-              "payment": new paymentPage()
+              "payment": new paymentPage(),
+              "list": new listPage()
             }
         };
         cy.wrap(initial_bag).as('bag');

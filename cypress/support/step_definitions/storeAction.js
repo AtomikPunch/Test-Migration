@@ -14,6 +14,7 @@ Cypress.Commands.add('i_access_store_choice_from_PDP', () => {
     });
 })
 
+Then("J'accède au choix du magasin à partir de la PLP", () => {cy.i_access_store_choice_from_PLP();})
 Cypress.Commands.add('i_access_store_choice_from_PLP', () => {
     cy.get("@bag").then((bag) => {
         bag.pages.list.find_store.click();

@@ -76,13 +76,13 @@ Cypress.Commands.add("i_access_cart_from_header", () => {
     });
 })
 
+Then("J'accède à la PLP", () => {cy.i_access_PLP();})
 Cypress.Commands.add('i_access_PLP',() => {
     cy.get("@bag").then((bag) => {
         
         cy.log("i_access_PLP");
         cy.visit(bag.environment.product_list_url);
         bag.pages.commons.accept_cookies.click();
-        bag.pages.commons.close_choose_store.click();
     });
 })
 
