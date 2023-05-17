@@ -19,7 +19,7 @@ module.exports = defineConfig({
     baseUrl: 'https://www.jardiland.com/',
     chromeWebSecurity: false,
     defaultCommandTimeout: 5000,
-    specPattern: "**/*.feature",
+    specPattern: "**/e2e/*",//feature",
     stepdefinitions: "**/support/step_definitions/**/*.js",
     fixturesFolder: 'cypress/resources',
     experimentalOriginDependencies: true,
