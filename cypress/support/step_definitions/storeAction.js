@@ -7,6 +7,7 @@ Cypress.Commands.add('i_access_store_choice_from_header', () => {
     });
 })
 
+Then("J'accède au choix du magasin à partir de la PDP", () => {cy.i_access_store_choice_from_PDP();})
 Cypress.Commands.add('i_access_store_choice_from_PDP', () => {
     cy.get("@bag").then((bag) => {
         bag.pages.product.verify_disponibility.click();
