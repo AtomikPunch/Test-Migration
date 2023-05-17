@@ -21,6 +21,20 @@ Then("je remplis le formulaire de connection pour un client {string}", (client_r
 Then("Je remplis le formulaire de connection", () => {cy.i_fill_the_login_form("last");})
 Cypress.Commands.add("i_fill_the_login_form", (client_reference) => {
     cy.get("@bag").then((bag) => {
+        
+        cy.origin(bag.environment.origins.auth, () => {
+            const { commonsPage } = Cypress.require('../../src/pages/commonsPage');
+            const commons = new commonsPage();
+            const { signonPage } = Cypress.require('../../src/pages/signonPage');
+            const signon = new signonPage();
+
+            // #HACK : We should not have to accept th cookies twice 
+            cy.wait(3000);
+            cy.get('body').then((body) => {
+                if (body.find(commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                    commons.accept_cookies.click();
+            });
+        });
         let client = bag.data.clients[client_reference];
         bag.data.clients.last = client;
         console.log("LOG WITH " + JSON.stringify(bag.data.clients.last));

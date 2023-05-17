@@ -14,7 +14,12 @@ Cypress.Commands.add("i_go_to_checkout", () => {
             if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
                 bag.pages.commons.accept_cookies.click();
         });
+    });
+})
 
+When("Je choisis de créer un compte depuis le checkout", () => {cy.i_choose_to_register_from_checkout();})
+Cypress.Commands.add("i_choose_to_register_from_checkout", () => { 
+    cy.get('@bag').then((bag) => {
         cy.origin(bag.environment.origins.auth, () => {
             const { commonsPage } = Cypress.require('../../src/pages/commonsPage');
             const commons = new commonsPage();
@@ -28,12 +33,6 @@ Cypress.Commands.add("i_go_to_checkout", () => {
                     commons.accept_cookies.click();
             });
         });
-    });
-})
-
-When("Je choisis de créer un compte depuis le checkout", () => {cy.i_choose_to_register_from_checkout();})
-Cypress.Commands.add("i_choose_to_register_from_checkout", () => { 
-    cy.get('@bag').then((bag) => {
         bag.pages.cart.create_new_account.trigger('click');
     }); 
 })
@@ -104,7 +103,7 @@ const getIframe = (card_reference , iframe, test) => {
 }
 
 
-Then("I fill payment form using {string}", (card_reference) => {cy.i_fill_payment_form(card_reference);})
+Then("Je remplis le forulaire de payment en utilisant la carte {string}", (card_reference) => {cy.i_fill_payment_form(card_reference);})
 Cypress.Commands.add("i_fill_payment_form", (card_reference) =>{
     cy.get('@bag').then((bag) => {
         let card = bag.data.credit_card[card_reference];
@@ -118,7 +117,7 @@ Cypress.Commands.add("i_fill_payment_form", (card_reference) =>{
     });
 });
 
-Then("I pay for my order", () => {cy.i_pay_for_my_order();})
+Then("Je paie ma commande", () => {cy.i_pay_for_my_order();})
 Cypress.Commands.add('i_pay_for_my_order', () => {
     cy.get('@bag').then((bag) => {
         cy.log("i_pay_for_my_order");
