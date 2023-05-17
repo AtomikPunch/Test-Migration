@@ -126,6 +126,7 @@ Cypress.Commands.add('i_pay_for_my_order', () => {
     });
 })
 
+When("Je reçois la confirmation de ma commande sur le site", () => {cy.i_get_order_confirmation_in_checkout();})
 Cypress.Commands.add('i_get_order_confirmation_in_checkout', () => {
     cy.get('@bag').then((bag) => {
         bag.pages.payment.checkout_confirmation.should('be.visible');
