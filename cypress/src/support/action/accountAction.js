@@ -75,6 +75,13 @@ Cypress.Commands.add("i_create_a_new_account_by_filling_form", (client_reference
         let client = bag.data.clients[client_reference]
         cy.log("i_create_a_new_account");
 
+        // #HACK : We should not have to accept th cookies twice 
+        cy.wait(3000);
+        cy.get('body').then((body) => {
+            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                bag.pages.commons.accept_cookies.click();
+        });
+
         bag.pages.cart.create_new_account.trigger('click');
         bag.pages.account.first_name_input.clear().type(client.first_name);
         bag.pages.account.last_name_input.type(client.last_name);

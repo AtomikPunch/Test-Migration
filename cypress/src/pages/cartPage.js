@@ -1,7 +1,7 @@
 exports.cartPage = class cartPage {
 
     get check_in() {
-        return cy.get('.ds-ens-prices-bottom__action', { timeout: 5000 })
+        return cy.get('.ds-ens-prices-bottom__action', { timeout: 10000 })
     }
 
     get checkbox_checked() {
