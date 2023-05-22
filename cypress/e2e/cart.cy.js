@@ -26,7 +26,7 @@ describe('Cart', () => {
 
     //CA01
     it('i can add a product with promotion', () => {
-        cy.i_access_PDP();
+        cy.i_access_PDP("disponible_en_livraison");
         cy.i_access_store_choice_from_header();
         cy.i_fill_search_store('store_with_promotion');
         cy.i_select_favorite_store('store_with_promotion');

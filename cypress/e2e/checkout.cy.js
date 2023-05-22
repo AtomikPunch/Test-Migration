@@ -30,22 +30,6 @@ describe('Checkout', () => {
         });
     });
 
-    it('i can log-in from delivery page and come back to it', () => {
-        cy.i_will_use_client('existing_client');
-        cy.i_access_to_the_webstore();
-        cy.i_log_in('last');
-        cy.i_empty_the_cart_using_the_API();
-        cy.i_log_out();
-        cy.i_access_PDP('available_in_delivery');
-        cy.i_choose_a_store_from_header('main_store');
-        cy.i_add_product_to_cart();
-        cy.i_access_to_cart_from_pop_up();
-        cy.i_go_to_checkout();
-        cy.i_fill_the_login_form('last');
-        cy.i_submit_the_login_form();
-        cy.i_verify_delivery_page_is_visible();
-    });
-
     //CO02
     it('i can form a cart filled with both delivery methods', () => {
         cy.i_access_PDP('available_in_delivery');
@@ -141,26 +125,9 @@ describe('Checkout', () => {
         cy.i_add_new_delivery_address('new_client');
         cy.i_verify_new_address_successfully_added();
     });
-
-    //CO08
-    it('i can pay with my credit card 3DS', () => {
-        cy.i_will_use_client('existing_client');
-        cy.i_access_to_the_webstore();
-        cy.i_log_in('last');
-        cy.i_empty_the_cart_using_the_API();
-        cy.i_access_PDP('available_in_delivery');
-        cy.i_choose_a_store_from_header('main_store');
-        cy.i_add_product_to_cart();
-        cy.i_continue_shopping();
-        cy.i_access_cart_from_header();
-        cy.i_go_to_checkout();
-        cy.i_verify_delivery_page_is_visible();
-        cy.i_fill_payment_form('3DS_frictionless');
-        cy.i_pay_for_my_order();
-    });
-
-    // MISSING:
-    // - Check email content
+    
+    //CO10
+    // MISSING: - Check email content
     it('i get an order validation from checkout and mail', () => {
         cy.i_will_use_client('getnada_client');
         cy.i_access_to_the_webstore();

@@ -1,24 +1,28 @@
 const { defineConfig } = require("cypress");
+const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
+const browserify = require("@badeball/cypress-cucumber-preprocessor/browserify");
+
+async function setupNodeEvents(on, config) {
+  // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
+  await preprocessor.addCucumberPreprocessorPlugin(on, config);
+
+  on("file:preprocessor", browserify.default(config));
+
+  // Make sure to return the config object as it might have been modified by the plugin.
+  return config;
+}
 
 module.exports = defineConfig({
+  video: false,
   numTestsKeptInMemory: 1,
   e2e: {
     baseUrl: 'https://www.jardiland.com/',
     chromeWebSecurity: false,
     defaultCommandTimeout: 5000,
-    screenshotsFolder: 'cypress/screenshots',
-    experimentalOriginDependencies: true,
+    specPattern: "**/e2e/*",//feature",
+    stepdefinitions: "**/support/step_definitions/**/*.js",
     fixturesFolder: 'cypress/resources',
-    supportFile: 'cypress/src/support/e2e.js',
-    setupNodeEvents(on, config) {
-      on('task', {
-        log(message) {
-          console.log(message);
-          return null;
-        }
-      }),
-        require("cypress-localstorage-commands/plugin")(on, config);
-      return config;
-    },
-  },
+    experimentalOriginDependencies: true,
+    setupNodeEvents, 
+  }
 });

@@ -1,3 +1,6 @@
+const { Given, Then } = require("@badeball/cypress-cucumber-preprocessor");
+
+Given("J'accede au site web", () => {cy.i_access_to_the_webstore();})
 Cypress.Commands.add("i_access_to_the_webstore", () => {
     cy.get("@bag").then((bag) => {
         
@@ -14,6 +17,7 @@ Cypress.Commands.add("i_access_to_the_webstore", () => {
     });
 })
 
+Then("J'accede à la page de connection", () => {cy.i_access_to_the_login_page();})
 Cypress.Commands.add("i_access_to_the_login_page", () => {
     cy.get("@bag").then((bag) => {
         
@@ -21,7 +25,7 @@ Cypress.Commands.add("i_access_to_the_login_page", () => {
         bag.pages.home.signin_link.click();
         
         cy.origin(bag.environment.origins.auth, () => {
-            const { commonsPage } = Cypress.require('../../pages/commonsPage');
+            const { commonsPage } = Cypress.require('../../src/pages/commonsPage');
             const commons = new commonsPage();
             
             // #HACK : We should not have to accept th cookies twice 
@@ -35,6 +39,7 @@ Cypress.Commands.add("i_access_to_the_login_page", () => {
 
 })
 
+Then("J'accede à la page de création de compte", () => {cy.i_access_to_the_registration_page();})
 Cypress.Commands.add("i_access_to_the_registration_page", () => {
     cy.get("@bag").then((bag) => {
         
@@ -42,9 +47,9 @@ Cypress.Commands.add("i_access_to_the_registration_page", () => {
         bag.pages.home.signin_link.click();
         
         cy.origin(bag.environment.origins.auth, () => {
-            const { commonsPage } = Cypress.require('../../pages/commonsPage');
+            const { commonsPage } = Cypress.require('../../src/pages/commonsPage');
             const commons = new commonsPage();
-            const { signonPage } = Cypress.require('../../pages/signonPage');
+            const { signonPage } = Cypress.require('../../src/pages/signonPage');
             const signon = new signonPage();
 
             // #HACK : We should not have to accept th cookies twice 
@@ -64,23 +69,20 @@ Cypress.Commands.add("i_access_to_my_account", () => {
     });
 })
 
+Then("J'accede au panier depuis le header", () => {cy.i_access_cart_from_header();})
 Cypress.Commands.add("i_access_cart_from_header", () => {
     cy.get("@bag").then((bag) => {
         bag.pages.home.cart_link.click();
     });
 })
 
-Cypress.Commands.add('i_access_PLP',(plp_reference) => {
+Then("J'accède à la PLP", () => {cy.i_access_PLP();})
+Cypress.Commands.add('i_access_PLP',() => {
     cy.get("@bag").then((bag) => {
         
         cy.log("i_access_PLP");
-        cy.visit(bag.data.categories[plp_reference].url);
-        // #HACK : We should not have to accept th cookies twice 
-        cy.wait(3000);
-        cy.get('body').then((body) => {
-            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
-                bag.pages.commons.accept_cookies.click();
-        });
+        cy.visit(bag.environment.product_list_url);
+        bag.pages.commons.accept_cookies.click();
     });
 })
 
