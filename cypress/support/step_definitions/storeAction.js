@@ -52,7 +52,7 @@ Cypress.Commands.add('i_change_store', () => {
 Cypress.Commands.add('i_select_a_new_store', (store_reference) => {
     cy.get("@bag").then((bag) => {
         let store = bag.data.store[store_reference]
-        cy.get('[data-test-store-locator-modal-card="'+store.card_number+'"] .ens-store-locator-card__cta').should('be.visible').click();
+        cy.get('[data-test-store-locator-modal-card="'+store.store_id+'"] .ens-store-locator-card__cta').should('be.visible').click();
         bag.pages.commons.confirm_store_change.should('be.visible').click();
     });
 })
