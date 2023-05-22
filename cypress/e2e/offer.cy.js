@@ -53,14 +53,14 @@ describe('Cart', () => {
         cy.i_verify_access_to_PDP();
     });
 
-    /* //OF07
+    /* //OF07 ------ KO
     it('i can search a product through search bar with its name', () => {
         cy.i_access_to_the_webstore();
         cy.i_search_a_product('name');
         cy.i_verify_product_in_PLP('existing_product');
     });
 
-    //OF08
+    //OF08 ------ KO
     it('i can search a product through search bar with its brand', () => {
         cy.i_access_to_the_webstore();
         cy.i_search_a_product('brand');
@@ -71,7 +71,7 @@ describe('Cart', () => {
     it('i can filter by max a price', () => {
         cy.i_access_PLP();
         cy.i_filter_by_max_price('maximum');
-        cy.i_verify_filter_tag_added('1','maximum');
+        cy.i_verify_filter_tag_added('maximum');
     });
 
     //OF10
@@ -79,15 +79,15 @@ describe('Cart', () => {
         cy.i_access_PLP();
         cy.i_filter_by_max_price('maximum');
         cy.i_filter_by_min_price('minimum');
-        cy.i_verify_filter_tag_added('1', 'maximum');
-        cy.i_verify_filter_tag_added('1', 'minimum');
+        cy.i_verify_filter_tag_added('maximum');
+        cy.i_verify_filter_tag_added('minimum');
     }); 
 
     //OF11
     it('i can filter by brand', () => {
         cy.i_access_PLP();
         cy.i_filter_by_brand('Fertiligene');
-        cy.i_verify_filter_tag_added('1','Fertiligene');
+        cy.i_verify_filter_tag_added('Fertiligene');
     });
 
     //OF12
@@ -96,8 +96,8 @@ describe('Cart', () => {
         cy.i_filter_by_max_price('maximum');
         cy.i_filter_by_min_price('minimum');
         cy.i_filter_by_brand('Jardiland');
-        cy.i_verify_filter_tag_added('2', 'maximum');
-        cy.i_verify_filter_tag_added('2', 'minimum');
-        cy.i_verify_filter_tag_added('2', 'Jardiland');
+        cy.i_verify_filter_tag_added('maximum');
+        cy.i_verify_filter_tag_added('minimum');
+        cy.i_verify_filter_tag_added('Jardiland');
     });
 })

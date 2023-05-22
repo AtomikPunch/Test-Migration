@@ -35,4 +35,8 @@ exports.listPage = class listPage{
     get see_more_product(){
         return cy.get('.ens-product-list-template__main-navigation--footer .ens-product-list-template__more-products', {timeout : 5000});
     }
+
+    product_in_PLP(store_id){
+        return cy.get("#" + store_id, {timeout : 5000});
+    }
 }

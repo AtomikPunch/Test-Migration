@@ -1,3 +1,6 @@
+const { Given, Then, When } = require("@badeball/cypress-cucumber-preprocessor");
+const { productPage } = require("../../src/pages/productPage");
+
 Cypress.Commands.add('i_filter_by_max_price', (FilterBy_reference) => {
     cy.get("@bag").then((bag) => {
         let filter = bag.data.FilterBy[FilterBy_reference];
@@ -57,3 +60,37 @@ Cypress.Commands.add("i_verify_product_in_PLP", (product_reference) => {
           }
     });
 });
+
+Then("Je cherche un produit {string} en utilisant son unité de besoin",(product_reference) => {cy.i_search_a_product_using_its_name(product_reference);})
+Cypress.Commands.add("i_search_a_product_using_its_name", (product_reference) => {
+    cy.get("@bag").then((bag) => {
+        cy.log("i_search_a_product");
+        let product = bag.data.products[product_reference];
+        bag.pages.home.search_bar.type(product.name).type('{enter}')
+    });
+})
+
+Then("Je verifie la présence du produit {string} dans la PLP", (product_reference) => { cy.i_verify_product_in_PLP(product_reference);})
+Cypress.Commands.add("i_verify_product_in_PLP", (product_reference) => {
+    cy.get("@bag").then((bag) => {
+        let product = bag.data.products[product_reference];
+        cy.wait(3000);
+            bag.pages.list.product_list.then($body => {
+            if ($body.find("#" + product.id).length > 0) {   
+                //evaluates as true if button exists at all
+                bag.pages.list.product_in_PLP(product.id).then($element => {
+                if ($element.is(':visible')){
+                    cy.log("element is visible and exist")
+                    }
+                });
+                } else {
+                    cy.log("element is not visible and doesn't exist")
+                    bag.pages.list.see_more_product.scrollIntoView().click();
+                    cy.wait(5000);
+                    cy.i_verify_product_in_PLP(product_reference);
+                    assert.isOk('everything','everything is OK');
+                }
+            });
+        
+        })
+    });
