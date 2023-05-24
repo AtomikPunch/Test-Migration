@@ -35,3 +35,14 @@ Feature: Offer
     And Je filtre par marque "ECLOZ"
     Then Je verifie la présence du filtre "ECLOZ"
     Then Je verifie la présence du produit "produit_disponible" dans la PLP
+
+  @OF12
+  Scenario: Un client peut filtrer les résultats d'une recherche en sélectionnant une marque et une fourchette de prix
+    Given J'accède à la PLP "categorie_standard"
+    And Je filtre par prix maximum
+    And Je filtre par prix minimum
+    And Je filtre par marque "ECLOZ"
+    Then Je verifie la présence du filtre "maximum"
+    And Je verifie la présence du filtre "minimum"
+    And Je verifie la présence du filtre "ECLOZ"
+    Then Je verifie la présence du produit "produit_disponible" dans la PLP
