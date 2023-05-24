@@ -15,7 +15,7 @@ Feature: Shop
 
   @SH03
   Scenario: Un client peut rechercher un magasin depuis la PLP
-    Given J'accède à la PLP
+    Given J'accède à la PLP "categorie_standard"
     And J'accède au choix du magasin à partir de la PLP
     Then Je remplis la recherche de magasin avec "Groslay"
 
@@ -35,7 +35,7 @@ Feature: Shop
 
   @SH06
   Scenario: Un client peut sélectionner un magasin favoris depuis la PLP
-    Given J'accède à la PLP
+    Given J'accède à la PLP "categorie_standard"
     And J'accède au choix du magasin à partir de la PLP
     Then Je remplis la recherche de magasin avec "Groslay"
     Then Je choisi "Groslay" comme magasin favoris

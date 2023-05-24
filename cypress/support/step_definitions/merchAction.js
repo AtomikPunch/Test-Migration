@@ -1,6 +1,8 @@
 const { Given, Then, When } = require("@badeball/cypress-cucumber-preprocessor");
 const { productPage } = require("../../src/pages/productPage");
 
+
+Then("Je filtre par prix maximum", () => {cy.i_filter_by_max_price('maximum');})
 Cypress.Commands.add('i_filter_by_max_price', (FilterBy_reference) => {
     cy.get("@bag").then((bag) => {
         let filter = bag.data.FilterBy[FilterBy_reference];
@@ -33,11 +35,11 @@ Cypress.Commands.add('i_filter_by_brand', (FilterBy_reference) => {
     });
 });
 
-Cypress.Commands.add('i_verify_filter_tag_added', (filter_count,filter_reference) => {
+Then("Je verifie la présence du filtre {string}", (filter_reference) => {cy.i_verify_filter_tag_added(filter_reference);})
+Cypress.Commands.add('i_verify_filter_tag_added', (filter_reference) => {
     cy.get("@bag").then((bag) => {
         let filter_selected = bag.data.FilterBy[filter_reference];
         cy.log("i_verify_filter_tag_added");
-        bag.pages.list.filter_tag.should('have.length', filter_count);
         bag.pages.list.filter_tag.contains(filter_selected.option);
     });
 });

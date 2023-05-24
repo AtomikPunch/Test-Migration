@@ -76,13 +76,18 @@ Cypress.Commands.add("i_access_cart_from_header", () => {
     });
 })
 
-Then("J'accède à la PLP", () => {cy.i_access_PLP();})
-Cypress.Commands.add('i_access_PLP',() => {
+Then("J'accède à la PLP {string}", (plp_reference) => {cy.i_access_PLP(plp_reference);})
+Cypress.Commands.add('i_access_PLP',(plp_reference) => {
     cy.get("@bag").then((bag) => {
         
         cy.log("i_access_PLP");
-        cy.visit(bag.environment.product_list_url);
-        bag.pages.commons.accept_cookies.click();
+        cy.visit(bag.data.categories[plp_reference].url);
+        // #HACK : We should not have to accept th cookies twice 
+        cy.wait(3000);
+        cy.get('body').then((body) => {
+            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                bag.pages.commons.accept_cookies.click();
+        });
     });
 })
 
