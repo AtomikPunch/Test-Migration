@@ -7,6 +7,16 @@ Feature: Offer
     Then Je verifie que le magasin n'est pas selectionné
     Then Je vérifie l'accès à la PDP
 
+  @OF06
+  Scenario: Un client peut consulter une page produit avec un magasin sélectionné
+    Given Je vais utiliser un client "avec_un_compte_existant"
+    Given J'accede au site web
+    And J'accède au choix du magasin a partir du header
+    Then Je remplis la recherche de magasin avec "magasin_principal"
+    Then Je choisi "magasin_principal" comme magasin favoris
+    Given J'accede à la PDP d'un produit "produit_disponible"
+    Then Je vérifie l'accès à la PDP
+
   @OF07
   Scenario: Un client peut rechercher un produit via l'unité de besoin
     Given J'accede au site web
