@@ -222,3 +222,17 @@ Cypress.Commands.add('i_verify_home_delivery_option_is_checked',() => {
        bag.pages.cart.checkbox_home_delivery.invoke('show').should('exist');
     })
 })
+
+Then("Je vérifie l'affichage du block click and collect", () => {cy.i_verify_block_displayed_in_click_and_collect();})
+Cypress.Commands.add('i_verify_block_displayed_in_click_and_collect', () => {
+    cy.get("@bag").then((bag) => {
+        bag.pages.cart.option_title.should('contain',bag.data.block.click_and_collect);
+    })
+});
+
+Then("Je vérifie que la méthode de livraison est bien click and collect", () => {cy.i_verify_click_and_collect_option_is_checked();})
+Cypress.Commands.add('i_verify_click_and_collect_option_is_checked',() => {
+    cy.get("@bag").then((bag) => {
+        bag.pages.cart.checkbox_click_and_collect.invoke('show').should('exist');
+    })
+})

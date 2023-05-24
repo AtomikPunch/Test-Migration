@@ -17,6 +17,17 @@ Feature: Checkout
     And Je soumets le formulaire de connection 
     When Je vérifie que la page de livraison est visible
 
+  @CO02
+  Scenario: Un client peut composer un panier en retrait uniquement
+    Given Je vais utiliser un client "avec_un_compte_existant"
+    And J'accede à la PDP d'un produit "disponible_en_pickup"
+    And Je choisis le magasin "magasin_principal" depuis le header
+    And J'ajoute le produit au panier en selectionnant l'option click and collect
+    And J'accède au panier depuis la pop-up
+    Then Je vérifie l'affichage du block click and collect
+    Then Je vérifie le produit "disponible_en_pickup" dans le block
+    Then Je vérifie que la méthode de livraison est bien click and collect
+    
   @CO03
   Scenario: Un client peut composer un panier en livraison à domicile uniquement
     Given Je vais utiliser un client "avec_un_compte_existant"

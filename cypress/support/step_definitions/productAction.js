@@ -38,6 +38,7 @@ Cypress.Commands.add('i_add_product_to_cart',() => {
     });
 })
 
+Then("J'ajoute le produit au panier en selectionnant l'option click and collect", () => {cy.i_pick_up_product_in_store();})
 Cypress.Commands.add('i_pick_up_product_in_store',()=> {
     cy.get('@bag').then((bag) => {
         bag.pages.product.click_and_collect_in_store.should('be.visible').click();
