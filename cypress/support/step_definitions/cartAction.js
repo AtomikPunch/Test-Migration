@@ -179,3 +179,24 @@ Cypress.Commands.add('i_empty_the_cart_using_the_API', () => {
         });
     });
 })
+
+Then("Je vérifie la réception de l'email en utilisant une API", () => {cy.i_verify_mail_successfully_received_using_the_API('last');})
+Cypress.Commands.add("i_verify_mail_successfully_received_using_the_API", (client_reference) => {
+    cy.get('@bag').then((bag) => {
+        cy.wait(15000)
+        let client = bag.data.clients[client_reference];
+        let email = client.email;
+        let inboxes = client.inboxes;
+        cy.GETNADA_API_retrieve_mail(inboxes, email).then((response) => {
+
+            expect(response.body.msgs[0].s).to.be.equal(client.subject)
+            let uid = response.body.msgs[0].uid;
+            let messages = client.messages
+            cy.GETNADA_API_retrieve_mail(messages, uid).then((response)=> {
+                expect(response.body).to.contain(client.mail_content);
+            });
+            let delete_url = client.delete ;
+            cy.GETNADA_API_delete_mail(delete_url,uid);
+        });
+    });
+});

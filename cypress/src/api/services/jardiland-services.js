@@ -27,3 +27,37 @@ Cypress.Commands.add('INVIVO_API_remove_cart_line', (user, cart_id, cart_line) =
     });
 })
 
+Cypress.Commands.add('GETNADA_API_retrieve_mail', (url ,value) => {
+    cy.get('@bag').then((bag) => {
+        let route = url + value;
+        let remaining_tentative = 10;
+        cy.API_GetNada_perform_GET(route).then((response) => {
+            while(response.body.last == 0){
+            if(response.body.last != '0'){
+            return cy.wrap(response.body);
+            }
+            else{
+                cy.log("no mail in inboxe");
+            }
+            cy.wait(3000);
+            remaining_tentative --;
+        }
+        });
+    });
+});
+
+Cypress.Commands.add('GETNADA_API_delete_mail',(url , uid) => {
+    cy.get('@bag').then((bag) => {
+        let route = url + uid;
+        cy.API_GetNada_perform_DELETE(route).then((response) => {
+            if(response.status == 201)
+            {
+                cy.log("mail deleted successfully")
+            }
+            else
+            {
+                cy.log("mail not deleted")
+            }
+        });
+    });
+})
