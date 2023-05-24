@@ -12,3 +12,10 @@ Feature: Offer
     Given J'accede au site web
     And Je cherche un produit "produit_disponible" en utilisant sa marque
     Then Je verifie la présence du produit "produit_disponible" dans la PLP
+
+  @OF09
+  Scenario: Un client peut filtrer les résultats d'une recherche en sélectionnant un prix max
+    Given J'accède à la PLP "categorie_standard"
+    And Je filtre par prix maximum
+    And Je verifie la présence du filtre "maximum"
+    Then Je verifie la présence du produit "produit_disponible" dans la PLP
