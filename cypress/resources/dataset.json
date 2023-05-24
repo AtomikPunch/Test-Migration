@@ -198,5 +198,10 @@
     "ECLOZ": {
       "option" : "Ecloz"
     }
+  },
+
+  "block" : {
+    "delivery" : "Livré à domicile",
+    "pick-up" : "À retirer"
   }
 }

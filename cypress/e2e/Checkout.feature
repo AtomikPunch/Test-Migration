@@ -17,6 +17,17 @@ Feature: Checkout
     And Je soumets le formulaire de connection 
     When Je vérifie que la page de livraison est visible
 
+  @CO03
+  Scenario: Un client peut composer un panier en livraison à domicile uniquement
+    Given Je vais utiliser un client "avec_un_compte_existant"
+    And J'accede à la PDP d'un produit "disponible_en_livraison"
+    And Je choisis le magasin "magasin_principal" depuis le header
+    And J'ajoute le produit au panier en selectionnant l'option de livraison à domicile
+    And J'accède au panier depuis la pop-up
+    Then Je vérifie l'afficage du block livraison à domicile
+    Then Je vérifie le produit "disponible_en_livraison" dans le block
+    Then Je vérifie que la méthode de livraison est bien livraison à domicile
+
   @CO08
   Scenario: Un client peut régler sa commande en CB 3DS
    Given Je vais utiliser un client "avec_un_compte_existant"

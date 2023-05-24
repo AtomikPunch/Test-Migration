@@ -25,6 +25,14 @@ exports.cartPage = class cartPage {
     }
 
     get checkbox_home_delivery() {
-        return cy.get('[data-test*="home_delivery"] .idf-radio__frame', { timeout: 5000 });
+        return cy.get('[data-test*="home_delivery"] .idf-radio__field:checked', { timeout: 5000 });
+    }
+
+    get option_title(){
+        return cy.get('h3',{timeout : 5000});
+    }
+
+    product_in_block(product_reference){
+        return cy.get('.ds-ens-product-card-line__content [href*='+ product_reference + ']', {timeout : 5000})
     }
 }
