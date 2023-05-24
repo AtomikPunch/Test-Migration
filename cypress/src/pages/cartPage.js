@@ -4,8 +4,8 @@ exports.cartPage = class cartPage {
         return cy.get('.ds-ens-prices-bottom__action', { timeout: 10000 })
     }
 
-    get checkbox_checked() {
-        return cy.get('[data-test*="click_and_collect"] .idf-radio__field', { timeout: 5000 });
+    get checkbox_click_and_collect() {
+        return cy.get('[data-test*="click_and_collect"] .idf-radio__field:checked', { timeout: 5000 });
     }
 
     get create_new_account() {
