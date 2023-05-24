@@ -48,7 +48,11 @@
     }
   },
 
-
+  "categories": {
+    "categorie_standard": {
+      "url": "https://www.jd-test.invivodigitalfactory.com/c/gazon"
+    }
+  },
 
   "products": {
     "produit_disponible": {
