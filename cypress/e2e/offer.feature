@@ -28,3 +28,10 @@ Feature: Offer
     Then Je verifie la présence du filtre "maximum"
     And Je verifie la présence du filtre "minimum"
     Then Je verifie la présence du produit "produit_disponible" dans la PLP
+
+  @0F11
+  Scenario: Un client peut filtrer les résultats d'une recherche en sélectionnant une marque
+    Given J'accède à la PLP "categorie_standard"
+    And Je filtre par marque "ECLOZ"
+    Then Je verifie la présence du filtre "ECLOZ"
+    Then Je verifie la présence du produit "produit_disponible" dans la PLP
