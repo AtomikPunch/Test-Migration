@@ -29,4 +29,8 @@ exports.commonsPage = class commonsPage{
     get confirm_store_change(){
         return cy.get('.ens-store-locator-warning-modal__footer .is-tertiary', {timeout : 5000});
     }
+
+    get store_selected(){
+        return cy.get('.idf-icon ens-store-locator-header__icon--selected', {timeout : 5000});
+    }
 }

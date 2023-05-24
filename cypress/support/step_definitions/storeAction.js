@@ -56,3 +56,10 @@ Cypress.Commands.add('i_select_a_new_store', (store_reference) => {
         bag.pages.commons.confirm_store_change.should('be.visible').click();
     });
 })
+
+Then("Je verifie que le magasin n'est pas selectionné", () => {cy.i_verify_store_not_selected();})
+Cypress.Commands.add('i_verify_store_not_selected', () => {
+    cy.get('@bag').then((bag) => {
+        bag.pages.commons.store_selected.should('not.exist');
+    });
+})
