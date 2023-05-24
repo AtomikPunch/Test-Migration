@@ -44,7 +44,11 @@
       "uid": "",
       "subject": "Confirmation de votre commande Jardiland.com",
       "sender": "no-reply@contact.enseignes.com",
-      "store": "magasinweb"
+      "store": "magasinweb",
+      "mail_content" : "Votre commande est entre de bonnes mains !",
+      "inboxes" : "inboxes/",
+      "messages" : "messages/html/",
+      "delete" : "messages/"
     }
   },
 
