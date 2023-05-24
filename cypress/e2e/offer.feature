@@ -19,3 +19,12 @@ Feature: Offer
     And Je filtre par prix maximum
     And Je verifie la présence du filtre "maximum"
     Then Je verifie la présence du produit "produit_disponible" dans la PLP
+
+  @OF10
+  Scenario: Un client peut filtrer les résultats d'une recherche en sélectionnant une fourchette de prix
+    Given J'accède à la PLP "categorie_standard"
+    And Je filtre par prix maximum
+    And Je filtre par prix minimum
+    Then Je verifie la présence du filtre "maximum"
+    And Je verifie la présence du filtre "minimum"
+    Then Je verifie la présence du produit "produit_disponible" dans la PLP

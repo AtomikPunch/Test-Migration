@@ -12,6 +12,7 @@ Cypress.Commands.add('i_filter_by_max_price', (FilterBy_reference) => {
     });
 });
 
+Then("Je filtre par prix minimum", () => {cy.i_filter_by_min_price('minimum');})
 Cypress.Commands.add('i_filter_by_min_price', (FilterBy_reference) => {
     cy.get("@bag").then((bag) => {
         let filter = bag.data.FilterBy[FilterBy_reference];
