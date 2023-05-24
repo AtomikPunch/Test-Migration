@@ -58,6 +58,7 @@ Cypress.Commands.add('i_continue_shopping',() => {
     });
 })
 
+Then("Je vérifie l'accès à la PDP", () => {cy.i_verify_access_to_PDP();})
 Cypress.Commands.add('i_verify_access_to_PDP', () => {
     cy.get('@bag').then((bag)=> {
         bag.pages.product.product_sheet.should('be.visible');

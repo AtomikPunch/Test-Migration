@@ -1,6 +1,12 @@
 @All @Offer
 Feature: Offer
 
+  @OF05
+  Scenario: Un client peut consulter une page produit sans avoir de magasin sélectionné
+    Given J'accede à la PDP d'un produit "produit_disponible"
+    Then Je verifie que le magasin n'est pas selectionné
+    Then Je vérifie l'accès à la PDP
+
   @OF07
   Scenario: Un client peut rechercher un produit via l'unité de besoin
     Given J'accede au site web
