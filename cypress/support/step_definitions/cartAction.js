@@ -200,3 +200,25 @@ Cypress.Commands.add("i_verify_mail_successfully_received_using_the_API", (clien
         });
     });
 });
+
+Then("Je vérifie l'afficage du block livraison à domicile", () => {cy.i_verify_block_displayed_in_home_delivery();})
+Cypress.Commands.add('i_verify_block_displayed_in_home_delivery', () => {
+    cy.get("@bag").then((bag) => {
+        bag.pages.cart.option_title.should('contain',bag.data.block.delivery);
+    })
+});
+
+Then("Je vérifie le produit {string} dans le block", (product_reference) => {cy.i_verify_product_in_block(product_reference);})
+Cypress.Commands.add('i_verify_product_in_block', (product_reference) => {
+    cy.get("@bag").then((bag) => {
+        let product = bag.data.products[product_reference];
+        bag.pages.cart.product_in_block(product.id).should('exist');
+    });
+});
+
+Then("Je vérifie que la méthode de livraison est bien livraison à domicile", () => {cy.i_verify_home_delivery_option_is_checked();})
+Cypress.Commands.add('i_verify_home_delivery_option_is_checked',() => {
+    cy.get("@bag").then((bag) => { 
+       bag.pages.cart.checkbox_home_delivery.invoke('show').should('exist');
+    })
+})
