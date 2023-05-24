@@ -27,7 +27,7 @@ Feature: Checkout
     Then Je vérifie l'affichage du block click and collect
     Then Je vérifie le produit "disponible_en_pickup" dans le block
     Then Je vérifie que la méthode de livraison est bien click and collect
-    
+
   @CO03
   Scenario: Un client peut composer un panier en livraison à domicile uniquement
     Given Je vais utiliser un client "avec_un_compte_existant"
@@ -38,6 +38,25 @@ Feature: Checkout
     Then Je vérifie l'afficage du block livraison à domicile
     Then Je vérifie le produit "disponible_en_livraison" dans le block
     Then Je vérifie que la méthode de livraison est bien livraison à domicile
+
+  @CO04
+  Scenario: Un client peut composer un panier en retrait et livraison à domicile
+    Given Je vais utiliser un client "avec_un_compte_existant"
+    And J'accede à la PDP d'un produit "disponible_en_livraison"
+    And Je choisis le magasin "magasin_principal" depuis le header
+    And J'ajoute le produit au panier en selectionnant l'option de livraison à domicile
+    And Je continue mes achats
+    And J'accede à la PDP d'un produit "disponible_en_pickup"
+    And J'ajoute le produit au panier en selectionnant l'option click and collect
+    And J'accède au panier depuis la pop-up
+
+    Then Je vérifie l'afficage du block livraison à domicile
+    Then Je vérifie le produit "disponible_en_livraison" dans le block
+    Then Je vérifie que la méthode de livraison est bien livraison à domicile
+
+    Then Je vérifie l'affichage du block click and collect
+    Then Je vérifie le produit "disponible_en_pickup" dans le block
+    Then Je vérifie que la méthode de livraison est bien click and collect
 
   @CO08
   Scenario: Un client peut régler sa commande en CB 3DS
