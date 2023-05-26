@@ -43,12 +43,14 @@ Cypress.Commands.add('i_select_favorite_store', (store_reference) => {
     });
 })
 
+Then("Je change de magasin", () => {cy.i_change_store();})
 Cypress.Commands.add('i_change_store', () => {
     cy.get("@bag").then((bag) => {
         bag.pages.commons.change_store.should('be.visible').click(); 
     });
 })
 
+Then("Je choisi le {string} comme nouveau magasin", () => {cy.i_select_a_new_store(store_reference);})
 Cypress.Commands.add('i_select_a_new_store', (store_reference) => {
     cy.get("@bag").then((bag) => {
         let store = bag.data.store[store_reference]

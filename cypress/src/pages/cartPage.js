@@ -35,4 +35,8 @@ exports.cartPage = class cartPage {
     product_in_block(product_reference){
         return cy.get('.ds-ens-product-card-line__content [href*='+ product_reference + ']', {timeout : 5000})
     }
+
+    get discount_amount(){
+        return cy.get(".ds-ens-pricing__discount-amount", {timeout : 5000});
+    }
 }
