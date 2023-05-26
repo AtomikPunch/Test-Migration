@@ -133,12 +133,15 @@ Cypress.Commands.add('i_get_order_confirmation_in_checkout', () => {
     });
 })
 
+Then("Je vérifie la promotion du produit {string}", (product_reference) => {cy.i_verify_discount(product_reference);})
 Cypress.Commands.add('i_verify_discount', (product_reference) => {
     cy.get('@bag').then((bag) => {
-        let product = bag.data.product[product_reference];
+        let product = bag.data.products[product_reference];
         bag.pages.cart.reduced_price.should('be.visible').invoke('text').then((text) => {
             expect(text.trim()).not.equal(product.price);
         });
+        bag.pages.cart.discount_amount.should("be.visible");
+        cy.screenshot({overwrite: true});
     });
 })
 
