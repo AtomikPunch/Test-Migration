@@ -32,7 +32,7 @@ Cypress.Commands.add('i_fill_search_store',(store_reference) =>{
     });
 })
 
-Then("Je choisi {string} comme magasin favoris", (store_reference) => {cy.i_select_favorite_store(store_reference);})
+Then("Je choisis {string} comme magasin favoris", (store_reference) => {cy.i_select_favorite_store(store_reference);})
 Cypress.Commands.add('i_select_favorite_store', (store_reference) => {
     cy.get("@bag").then((bag) => {
         let store = bag.data.store[store_reference]
@@ -50,7 +50,7 @@ Cypress.Commands.add('i_change_store', () => {
     });
 })
 
-Then("Je choisi le {string} comme nouveau magasin", () => {cy.i_select_a_new_store(store_reference);})
+Then("Je choisis le {string} comme nouveau magasin", () => {cy.i_select_a_new_store(store_reference);})
 Cypress.Commands.add('i_select_a_new_store', (store_reference) => {
     cy.get("@bag").then((bag) => {
         let store = bag.data.store[store_reference]
