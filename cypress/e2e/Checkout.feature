@@ -20,12 +20,12 @@ Feature: Checkout
   @CO02
   Scenario: Un client peut composer un panier en retrait uniquement
     Given Je vais utiliser un client "avec_un_compte_existant"
-    And J'accede à la PDP d'un produit "disponible_en_pickup"
+    And J'accede à la PDP d'un produit "disponible_en_click_and_collect"
     And Je choisis le magasin "magasin_principal" depuis le header
     And J'ajoute le produit au panier en selectionnant l'option click and collect
     And J'accède au panier depuis la pop-up
     Then Je vérifie l'affichage du bloc click and collect
-    Then Je vérifie le produit "disponible_en_pickup" dans le bloc
+    Then Je vérifie le produit "disponible_en_click_and_collect" dans le bloc
     Then Je vérifie que la méthode de livraison est bien click and collect
 
   @CO03
@@ -46,7 +46,7 @@ Feature: Checkout
     And Je choisis le magasin "magasin_principal" depuis le header
     And J'ajoute le produit au panier en selectionnant l'option de livraison à domicile
     And Je continue mes achats
-    And J'accede à la PDP d'un produit "disponible_en_pickup"
+    And J'accede à la PDP d'un produit "disponible_en_click_and_collect"
     And J'ajoute le produit au panier en selectionnant l'option click and collect
     And J'accède au panier depuis la pop-up
 
@@ -55,7 +55,7 @@ Feature: Checkout
     Then Je vérifie que la méthode de livraison est bien livraison à domicile
 
     Then Je vérifie l'affichage du bloc click and collect
-    Then Je vérifie le produit "disponible_en_pickup" dans le bloc
+    Then Je vérifie le produit "disponible_en_click_and_collect" dans le bloc
     Then Je vérifie que la méthode de livraison est bien click and collect
 
   @CO08

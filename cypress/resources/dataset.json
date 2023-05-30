@@ -89,7 +89,7 @@
         "category": "gazon-rustique"
       }
     },
-    "disponible_en_pickup": {
+    "disponible_en_click_and_collect": {
       "id": "2068566",
       "name": "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
       "price": "64,99 €",
@@ -104,7 +104,7 @@
         "category": "gazon-rustique"
       }
     },
-    "disponible_en_livraison_et_en_pickup": {
+    "disponible_en_livraison_et_en_click_and_collect": {
       "id": "2068566",
       "name": "Gazon facile ECLOZ - Tapis de gazon prêt à pousser pour 15 m2",
       "price": "64,99 €",
