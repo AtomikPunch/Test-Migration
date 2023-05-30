@@ -13,7 +13,7 @@ Feature: Offer
     Given J'accede au site web
     And J'accède au choix du magasin a partir du header
     Then Je remplis la recherche de magasin avec "magasin_principal"
-    Then Je choisi "magasin_principal" comme magasin favoris
+    Then Je choisis "magasin_principal" comme magasin favoris
     Given J'accede à la PDP d'un produit "produit_disponible"
     Then Je vérifie l'accès à la PDP
 

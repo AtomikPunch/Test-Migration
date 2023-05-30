@@ -151,7 +151,7 @@ Cypress.Commands.add('i_verify_cart_is_empty', () => {
     });
 })
 
-Then("Je choisi l'option {string}", (option_reference) => {cy.i_change_delivery_option(option_reference);})
+Then("Je choisis l'option {string}", (option_reference) => {cy.i_change_delivery_option(option_reference);})
 Cypress.Commands.add('i_change_delivery_option', (option_reference) => {
     cy.get('@bag').then((bag) => {
         bag.pages.cart.checkbox_not_checked(option_reference).invoke('show').check();
