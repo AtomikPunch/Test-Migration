@@ -39,4 +39,12 @@ exports.cartPage = class cartPage {
     get discount_amount(){
         return cy.get(".ds-ens-pricing__discount-amount", {timeout : 5000});
     }
+
+    checkbox_not_checked(delivery_option) {
+        return cy.get('[data-test*="'+ delivery_option +'"] .idf-radio__field', { timeout: 5000 });
+    }
+
+    get delivery_fee(){
+        return cy.get('.ens-common-line-prices-lines__fees .ds-ens-pricing__price', {timeout : 5000});
+    }
 }

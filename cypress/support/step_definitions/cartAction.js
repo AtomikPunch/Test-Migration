@@ -151,19 +151,23 @@ Cypress.Commands.add('i_verify_cart_is_empty', () => {
     });
 })
 
-Cypress.Commands.add('i_change_delivery_option', () => {
+Then("Je choisi l'option {string}", (option_reference) => {cy.i_change_delivery_option(option_reference);})
+Cypress.Commands.add('i_change_delivery_option', (option_reference) => {
     cy.get('@bag').then((bag) => {
-        bag.pages.cart.checkbox_home_delivery.click();
+        bag.pages.cart.checkbox_not_checked(option_reference).invoke('show').check();
     });
 })
 
+Then("Je vérifie le changement du prix total du panier {string}", (product_reference) => {cy.i_verify_total_changed(product_reference);})
 Cypress.Commands.add('i_verify_total_changed', (product_reference) => {
     cy.wait(4000);
     cy.get('@bag').then((bag) => {
-        let product = bag.data.product[product_reference];
+        let product = bag.data.products[product_reference];
         bag.pages.cart.total_price.invoke('text').then((text) => {
             expect(text.trim().replace(/\u00a0/g, ' ')).not.equal(product.price)
         });
+        bag.pages.cart.delivery_fee.should('be.visible').should('not.contain', '0,00');
+        cy.screenshot({overwrite: true});
     });
 })
 
