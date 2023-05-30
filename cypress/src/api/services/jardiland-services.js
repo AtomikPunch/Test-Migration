@@ -27,6 +27,34 @@ Cypress.Commands.add('INVIVO_API_remove_cart_line', (user, cart_id, cart_line) =
     });
 })
 
+Cypress.Commands.add('INVIVO_API_add_new_delivery_address', (client) => {
+    cy.get('@bag').then((bag) => {
+        let token = client.access_token;
+        cy.log(token);
+        let route = '/v1/users/me/addresses';
+        let body = {   
+            firstName: client.first_name,
+            lastName: client.last_name,
+            line1: client.new_address,
+            line2: '',
+            companyName: '',
+            postalCode: client.new_postal_code,
+            city: client.new_city,
+            mobilePhoneNumber: client.new_number,
+            mobilePhoneNumberIndicator: 'FR|+33',
+            country: 'France',
+            defaultAddress: true,
+            billingAddress: false
+        }
+        cy.INVIVO_API_perform_POST(route,body,token).then((response) => {
+            if(response.status == 200)
+            {
+                cy.screenshot({overwrite: true});
+            }
+        });
+    })
+})
+
 Cypress.Commands.add('GETNADA_API_retrieve_mail', (url ,value) => {
     cy.get('@bag').then((bag) => {
         let route = url + value;
