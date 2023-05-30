@@ -44,6 +44,7 @@ Cypress.Commands.add("i_verify_checkbox_checked", () => {
     }); 
 })
 
+Then("Je vérifie l'adresse du client", () => {cy.i_verify_user_default_address('last');})
 Cypress.Commands.add("i_verify_user_default_address", (client_reference) => {
     cy.get('@bag').then((bag) => {
         cy.log("i_verify_user_default_address");
@@ -51,6 +52,7 @@ Cypress.Commands.add("i_verify_user_default_address", (client_reference) => {
         bag.pages.delivery.user_default_address.invoke('text').then((text) =>{
             expect(text.trim()).equal(client.default_address);
         });
+        cy.screenshot({overwrite: true});
     });
 })
 
@@ -241,5 +243,12 @@ Then("Je vérifie que la méthode de livraison est bien click and collect", () =
 Cypress.Commands.add('i_verify_click_and_collect_option_is_checked',() => {
     cy.get("@bag").then((bag) => {
         bag.pages.cart.checkbox_click_and_collect.invoke('show').should('exist');
+    })
+})
+
+Then("J'ajoute une nouvelle adresse dans le tunnel d'achat", () => {cy.i_add_new_address_in_checkout();})
+Cypress.Commands.add('i_add_new_address_in_checkout', ()  => {
+    cy.get('@bag').then((bag) => {
+        cy.INVIVO_API_add_new_delivery_address(bag.data.clients.last);
     })
 })

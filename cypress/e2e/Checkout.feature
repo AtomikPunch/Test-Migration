@@ -58,6 +58,24 @@ Feature: Checkout
     Then Je vérifie le produit "disponible_en_click_and_collect" dans le bloc
     Then Je vérifie que la méthode de livraison est bien click and collect
 
+  @CO07
+  Scenario: Un nouveau client peut ajouter une adresse de livraison
+    Given Je genere un email aléatoire pour un client "sans_compte"
+    And Je vais utiliser un client "sans_compte"
+    And J'accede au site web
+    And J'accede à la PDP d'un produit "disponible_en_livraison"
+    And Je choisis le magasin "magasin_principal" depuis le header
+    And J'ajoute le produit au panier en selectionnant l'option de livraison à domicile
+    And J'accède au panier depuis la pop-up
+    And J'accede au checkout
+    When Je choisis de créer un compte depuis le checkout
+    And Je remplis le formulaire de création de compte
+    And Je soumets le formulaire de création de compte
+    And J'ajoute une nouvelle adresse dans le tunnel d'achat
+    And J'accede au checkout
+    When Je vérifie que la page de livraison est visible
+    Then Je vérifie l'adresse du client
+    
   @CO08
   Scenario: Un client peut régler sa commande en CB 3DS
    Given Je vais utiliser un client "avec_un_compte_existant"
