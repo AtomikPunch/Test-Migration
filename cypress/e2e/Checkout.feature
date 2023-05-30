@@ -24,8 +24,8 @@ Feature: Checkout
     And Je choisis le magasin "magasin_principal" depuis le header
     And J'ajoute le produit au panier en selectionnant l'option click and collect
     And J'accède au panier depuis la pop-up
-    Then Je vérifie l'affichage du block click and collect
-    Then Je vérifie le produit "disponible_en_pickup" dans le block
+    Then Je vérifie l'affichage du bloc click and collect
+    Then Je vérifie le produit "disponible_en_pickup" dans le bloc
     Then Je vérifie que la méthode de livraison est bien click and collect
 
   @CO03
@@ -35,8 +35,8 @@ Feature: Checkout
     And Je choisis le magasin "magasin_principal" depuis le header
     And J'ajoute le produit au panier en selectionnant l'option de livraison à domicile
     And J'accède au panier depuis la pop-up
-    Then Je vérifie l'afficage du block livraison à domicile
-    Then Je vérifie le produit "disponible_en_livraison" dans le block
+    Then Je vérifie l'afficage du bloc livraison à domicile
+    Then Je vérifie le produit "disponible_en_livraison" dans le bloc
     Then Je vérifie que la méthode de livraison est bien livraison à domicile
 
   @CO04
@@ -50,12 +50,12 @@ Feature: Checkout
     And J'ajoute le produit au panier en selectionnant l'option click and collect
     And J'accède au panier depuis la pop-up
 
-    Then Je vérifie l'afficage du block livraison à domicile
-    Then Je vérifie le produit "disponible_en_livraison" dans le block
+    Then Je vérifie l'afficage du bloc livraison à domicile
+    Then Je vérifie le produit "disponible_en_livraison" dans le bloc
     Then Je vérifie que la méthode de livraison est bien livraison à domicile
 
-    Then Je vérifie l'affichage du block click and collect
-    Then Je vérifie le produit "disponible_en_pickup" dans le block
+    Then Je vérifie l'affichage du bloc click and collect
+    Then Je vérifie le produit "disponible_en_pickup" dans le bloc
     Then Je vérifie que la méthode de livraison est bien click and collect
 
   @CO08

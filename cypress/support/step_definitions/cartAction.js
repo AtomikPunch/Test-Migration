@@ -208,14 +208,14 @@ Cypress.Commands.add("i_verify_mail_successfully_received_using_the_API", (clien
     });
 });
 
-Then("Je vérifie l'afficage du block livraison à domicile", () => {cy.i_verify_block_displayed_in_home_delivery();})
+Then("Je vérifie l'afficage du bloc livraison à domicile", () => {cy.i_verify_block_displayed_in_home_delivery();})
 Cypress.Commands.add('i_verify_block_displayed_in_home_delivery', () => {
     cy.get("@bag").then((bag) => {
         bag.pages.cart.option_title.should('contain',bag.data.block.delivery);
     })
 });
 
-Then("Je vérifie le produit {string} dans le block", (product_reference) => {cy.i_verify_product_in_block(product_reference);})
+Then("Je vérifie le produit {string} dans le bloc", (product_reference) => {cy.i_verify_product_in_block(product_reference);})
 Cypress.Commands.add('i_verify_product_in_block', (product_reference) => {
     cy.get("@bag").then((bag) => {
         let product = bag.data.products[product_reference];
@@ -230,7 +230,7 @@ Cypress.Commands.add('i_verify_home_delivery_option_is_checked',() => {
     })
 })
 
-Then("Je vérifie l'affichage du block click and collect", () => {cy.i_verify_block_displayed_in_click_and_collect();})
+Then("Je vérifie l'affichage du bloc click and collect", () => {cy.i_verify_block_displayed_in_click_and_collect();})
 Cypress.Commands.add('i_verify_block_displayed_in_click_and_collect', () => {
     cy.get("@bag").then((bag) => {
         bag.pages.cart.option_title.should('contain',bag.data.block.click_and_collect);
