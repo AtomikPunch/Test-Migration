@@ -70,7 +70,7 @@ Feature: Checkout
     And J'accède au panier depuis la pop-up
     And J'accede au checkout
     When Je vérifie que la page de livraison est visible
-    Then Je remplis le forulaire de payment en utilisant la carte "3DS_frictionless"
+    Then Je remplis le formulaire de payment en utilisant la carte "3DS_frictionless"
     Then Je paie ma commande
 
   @CO09
@@ -86,7 +86,7 @@ Feature: Checkout
     And J'accede au panier depuis le header
     And J'accede au checkout
     When Je vérifie que la page de livraison est visible
-    Then Je remplis le forulaire de payment en utilisant la carte "3DS_frictionless"
+    Then Je remplis le formulaire de payment en utilisant la carte "3DS_frictionless"
     Then Je paie ma commande
     Then Je reçois la confirmation de ma commande sur le site
 
@@ -103,7 +103,7 @@ Feature: Checkout
     And J'accede au panier depuis le header
     And J'accede au checkout
     When Je vérifie que la page de livraison est visible
-    Then Je remplis le forulaire de payment en utilisant la carte "3DS_frictionless"
+    Then Je remplis le formulaire de payment en utilisant la carte "3DS_frictionless"
     Then Je paie ma commande
     Then Je reçois la confirmation de ma commande sur le site
     Then Je vérifie la réception de l'email en utilisant une API

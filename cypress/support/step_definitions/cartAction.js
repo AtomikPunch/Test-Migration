@@ -103,7 +103,7 @@ const getIframe = (card_reference , iframe, test) => {
 }
 
 
-Then("Je remplis le forulaire de payment en utilisant la carte {string}", (card_reference) => {cy.i_fill_payment_form(card_reference);})
+Then("Je remplis le formulaire de payment en utilisant la carte {string}", (card_reference) => {cy.i_fill_payment_form(card_reference);})
 Cypress.Commands.add("i_fill_payment_form", (card_reference) =>{
     cy.get('@bag').then((bag) => {
         let card = bag.data.credit_card[card_reference];
