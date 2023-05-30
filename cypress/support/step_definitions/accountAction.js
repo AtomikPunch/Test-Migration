@@ -116,14 +116,18 @@ Cypress.Commands.add("i_submit_the_registration_form", (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference]
         
+        cy.intercept("POST", "https://invivo-jardiland-test.eu.auth0.com/oauth/token").as("loginResponse");
         bag.pages.account.submit_account_creation.click();
         bag.pages.account.successfulConnexion.should('exist');
 
+        cy.wait("@loginResponse").then((intercept) => {
+            bag.data.clients.last.access_token = intercept.response.body.access_token;
         // #HACK : We should not have to accept th cookies twice 
-        cy.wait(3000);
-        cy.get('body').then((body) => {
-            if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
-                bag.pages.commons.accept_cookies.click();
+            cy.wait(3000);
+            cy.get('body').then((body) => {
+                if (body.find(bag.pages.commons.accept_cookies_selector, {timeout : 5000}).length > 0)
+                    bag.pages.commons.accept_cookies.click();
+            });
         });
     });
 })
