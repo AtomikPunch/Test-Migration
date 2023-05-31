@@ -1,6 +1,12 @@
 @All @Offer
 Feature: Offer
 
+  @OF01
+  Scenario: Un client peut consulter une page catégorie de niveau 1
+    Given J'accede au site web
+    And J'accède à la PLP niveau 1 du "produit_disponible"
+    Then Je vérifie l'accès à la PLP niveau 1 du "produit_disponible"
+    
   @OF05
   Scenario: Un client peut consulter une page produit sans avoir de magasin sélectionné
     Given J'accede à la PDP d'un produit "produit_disponible"
