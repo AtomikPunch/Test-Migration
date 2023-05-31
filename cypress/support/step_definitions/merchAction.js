@@ -107,3 +107,19 @@ Cypress.Commands.add("i_verify_product_in_PLP", (product_reference) => {
         
         })
     });
+
+Then("J'accède à la PLP niveau 1 du {string}", (product_reference) => {cy.i_access_to_PLP_level_1(product_reference);})
+Cypress.Commands.add("i_access_to_PLP_level_1", (product_reference) => {
+    cy.get("@bag").then((bag) => {
+        let product = bag.data.products[product_reference];
+        bag.pages.commons.navigation_items(product.level_1.category).click();
+    })
+})
+
+Then("Je vérifie l'accès à la PLP niveau 1 du {string}", (product_reference) => {cy.i_verify_level_1(product_reference);})
+Cypress.Commands.add("i_verify_level_1", (product_reference) => {
+    cy.get("@bag").then((bag) => {
+        let product = bag.data.products[product_reference];
+        cy.url().should('include', product.level_1.category )
+    })
+})

@@ -33,4 +33,8 @@ exports.commonsPage = class commonsPage{
     get store_selected(){
         return cy.get('.idf-icon ens-store-locator-header__icon--selected', {timeout : 5000});
     }
+
+    navigation_items(element){
+        return cy.get('[href="/c/'+ element +'"].ens-main-navigation-items__link', {timeout : 5000});
+    }
 }
