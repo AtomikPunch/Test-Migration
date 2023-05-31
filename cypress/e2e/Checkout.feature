@@ -58,6 +58,23 @@ Feature: Checkout
     Then Je vérifie le produit "disponible_en_click_and_collect" dans le bloc
     Then Je vérifie que la méthode de livraison est bien click and collect
 
+  @CO05
+  Scenario: Un client connu peut utiliser son adresse de livraison par défaut
+    Given Je vais utiliser un client "avec_un_compte_existant"
+    And J'accede au site web
+    And Je me connecte
+    Then Je vide le panier en utilisant une API
+    Then Je me deconnecte
+    And J'accede à la PDP d'un produit "disponible_en_livraison"
+    And Je choisis le magasin "magasin_principal" depuis le header
+    And J'ajoute le produit au panier en selectionnant l'option de livraison à domicile
+    And J'accède au panier depuis la pop-up
+    And J'accede au checkout
+    And Je remplis le formulaire de connection
+    And Je soumets le formulaire de connection 
+    When Je vérifie que la page de livraison est visible
+    Then Je vérifie l'adresse du client
+    
   @CO07
   Scenario: Un nouveau client peut ajouter une adresse de livraison
     Given Je genere un email aléatoire pour un client "sans_compte"

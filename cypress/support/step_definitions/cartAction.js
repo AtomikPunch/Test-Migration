@@ -84,6 +84,7 @@ Cypress.Commands.add('i_add_new_delivery_address', (client_reference) => {
     });
 })
 
+Then("Je vérifie l'ajout de la nouvelle adresse", () => {cy.i_verify_new_address_successfully_added();})
 Cypress.Commands.add('i_verify_new_address_successfully_added', () => {
     cy.get('@bag').then((bag) => {
         cy.log("i_verify_new_address_successfully_added");
