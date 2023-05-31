@@ -64,6 +64,8 @@ Cypress.Commands.add("i_verify_delivery_page_is_visible",() =>{
     });
 })
 
+
+Then("J'ajoute une nouvelle adresse du client {string}", (client_reference) => {cy.i_add_new_delivery_address(client_reference)})
 Cypress.Commands.add('i_add_new_delivery_address', (client_reference) => {
     cy.get("@bag").then((bag) => {
         let client = bag.data.clients[client_reference]
