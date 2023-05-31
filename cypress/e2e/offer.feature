@@ -7,6 +7,12 @@ Feature: Offer
     And J'accède à la PLP niveau 1 du "produit_disponible"
     Then Je vérifie l'accès à la PLP niveau 1 du "produit_disponible"
     
+  @OF02
+  Scenario: Un client peut consulter une page catégorie de niveau 2
+    Given J'accede au site web
+    And J'accède à la PLP niveau 2 du "produit_disponible"
+    Then Je vérifie l'accès à la PLP niveau 2 du "produit_disponible"
+
   @OF05
   Scenario: Un client peut consulter une page produit sans avoir de magasin sélectionné
     Given J'accede à la PDP d'un produit "produit_disponible"
