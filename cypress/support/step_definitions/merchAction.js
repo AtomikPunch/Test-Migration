@@ -123,3 +123,22 @@ Cypress.Commands.add("i_verify_level_1", (product_reference) => {
         cy.url().should('include', product.level_1.category )
     })
 })
+
+Then("J'accède à la PLP niveau 2 du {string}", (product_reference) => {cy.i_access_to_PLP_level_2(product_reference);})
+Cypress.Commands.add("i_access_to_PLP_level_2", (product_reference) => {
+    cy.get("@bag").then((bag) => {
+        let product = bag.data.products[product_reference];
+        bag.pages.commons.navigation_items(product.level_1.category).trigger('onmouseover');
+        bag.pages.commons.navigation_items(product.level_1.category).trigger('mouseenter');
+        cy.wait(2000);
+        bag.pages.commons.navigation_sub_items(product.level_2.category).click();
+    })
+})
+
+Then("Je vérifie l'accès à la PLP niveau 2 du {string}", (product_reference) => {cy.i_verify_level_2(product_reference);})
+Cypress.Commands.add("i_verify_level_2", (product_reference) => {
+    cy.get("@bag").then((bag) => {
+        let product = bag.data.products[product_reference];
+        cy.url().should('include', product.level_2.category )
+    })
+})
