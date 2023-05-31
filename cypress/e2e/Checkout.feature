@@ -74,6 +74,22 @@ Feature: Checkout
     And Je soumets le formulaire de connection 
     When Je vérifie que la page de livraison est visible
     Then Je vérifie l'adresse du client
+
+  @CO06
+  Scenario: Un client connu peut modifier une adresse de livraison
+    Given Je vais utiliser un client "avec_un_compte_existant"
+    And J'accede au site web
+    And Je me connecte
+    Then Je vide le panier en utilisant une API
+    And J'accede à la PDP d'un produit "disponible_en_livraison"
+    And Je choisis le magasin "magasin_principal" depuis le header
+    And J'ajoute le produit au panier en selectionnant l'option de livraison à domicile
+    And J'accède au panier depuis la pop-up
+    And J'accede au checkout
+    When Je vérifie que la page de livraison est visible
+    And J'ajoute une nouvelle adresse du client "avec_un_compte_existant"
+    Then Je vérifie l'ajout de la nouvelle adresse
+    Then Je vérifie l'adresse du client
     
   @CO07
   Scenario: Un nouveau client peut ajouter une adresse de livraison
