@@ -119,6 +119,21 @@
       "level_3": {
         "category": "gazon-rustique"
       }
+    },
+    "indisponible_en_click_and_collect": {
+      "id": "971218",
+      "name": "Bassin de jardin préformé Start en polyéthylène 500L Ubbink",
+      "price": "115,00 €",
+      "brand": "Ubbink",
+      "level_1": {
+        "category": "amenagement-exterieur"
+      },
+      "level_2": {
+        "category": "bassin-et-accessoires"
+      },
+      "level_3": {
+        "category": "bassin-de-jardin"
+      }
     }
   },
 

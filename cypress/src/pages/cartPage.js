@@ -47,4 +47,12 @@ exports.cartPage = class cartPage {
     get delivery_fee(){
         return cy.get('.ens-common-line-prices-lines__fees .ds-ens-pricing__price', {timeout : 5000});
     }
+
+    get store_change_warning(){
+        return '.ens-store-locator-warning-modal__title'
+    }
+
+    get change_store_in_warning(){
+        return cy.get('.ens-store-locator-warning-modal__footer > .is-tertiary', {timeout : 5000});
+    }
 }
