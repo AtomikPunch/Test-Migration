@@ -15,7 +15,8 @@ pipeline{
         }
         stage('testing'){
             steps{
-                bat "npx cypress run --env tags=@$SPEC" 
+                bat "npx cypress run --env tags=@$SPEC --browser chrome" 
+                //npx cypress run --env tags="@Cart or @Shop or @Offer"  --browser chrome
             }
         }
         stage('generate report'){
