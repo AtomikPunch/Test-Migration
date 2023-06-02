@@ -45,4 +45,8 @@ exports.commonsPage = class commonsPage{
     navigation_sub_sub_items(element){
         return cy.get('[href="/c/'+ element +'"].ens-main-navigation-sub-sub-menu__link', {timeout : 5000})
     }
+
+    get page(){
+        return cy.get('#__layout', {timeout : 5000});
+    }
 }

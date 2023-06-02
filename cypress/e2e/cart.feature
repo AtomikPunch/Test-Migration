@@ -11,6 +11,20 @@ Feature: Cart
     And J'accède au panier depuis la pop-up
     Then Je vérifie la promotion du produit "produit_disponible"
 
+  @CA02
+  Scenario: Le panier est correctement recalculer lorsque je change de magasin alors un produit devenu indisponible est supprimé
+    Given J'accede à la PDP d'un produit "indisponible_en_click_and_collect"
+    And J'accède au choix du magasin a partir du header
+    Then Je remplis la recherche de magasin avec "magasin_principal"
+    Then Je choisis "magasin_principal" comme magasin favoris
+    And J'ajoute le produit au panier en selectionnant l'option click and collect
+    And J'accède au panier depuis la pop-up
+    And J'accède au choix du magasin a partir du header
+    And Je change de magasin
+    Then Je remplis la recherche de magasin avec "produit_non_disponible"
+    And Je choisis "produit_non_disponible" comme magasin favoris
+    Then Je vérifie que la panier soit vide
+
   @CA004
   Scenario: Le panier est correctement recalculer lorsque je change d'option de livraison/retrait alors les nouveaux frais d'expédition s'appliquent au total panier
     Given Je vais utiliser un client "avec_un_compte_existant"

@@ -150,6 +150,7 @@ Cypress.Commands.add('i_verify_discount', (product_reference) => {
     });
 })
 
+Then("Je vérifie que la panier soit vide", () => {cy.i_verify_cart_is_empty();})
 Cypress.Commands.add('i_verify_cart_is_empty', () => {
     cy.get('@bag').then((bag) => {
         bag.pages.cart.empty_cart.should('be.visible');
