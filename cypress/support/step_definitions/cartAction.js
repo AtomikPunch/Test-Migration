@@ -256,3 +256,17 @@ Cypress.Commands.add('i_add_new_address_in_checkout', ()  => {
         cy.INVIVO_API_add_new_delivery_address(bag.data.clients.last);
     })
 })
+
+Then("Je vérifie le changement de prix du produit {string} grâce au changement de magasin", (product_reference) => {cy.i_verify_total_price_after_store_change(product_reference);})
+Cypress.Commands.add('i_verify_total_price_after_store_change', (product_reference) => {
+    cy.wait(4000);
+    cy.get('@bag').then((bag) => {
+        let product = bag.data.products[product_reference];
+        bag.pages.cart.total_price.invoke('text').then((text) => {
+            let clean_text = text.trim().replace(/\u00a0/g, ' ');
+            expect(clean_text).not.equal(product.price)
+            expect(clean_text).equal(product.different_store_price);
+        });
+        cy.screenshot({overwrite: true});
+    });
+})
