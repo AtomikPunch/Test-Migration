@@ -134,6 +134,22 @@
       "level_3": {
         "category": "bassin-de-jardin"
       }
+    },
+    "produit_changeant_de_prix": {
+      "id": "971519",
+      "name": "Pompe XTRA 400",
+      "price": "33,49 €",
+      "different_store_price": "33,45 €",
+      "brand": "Ubbink",
+      "level_1": {
+        "category": "amenagement-exterieur"
+      },
+      "level_2": {
+        "category": "bassin-et-accessoires"
+      },
+      "level_3": {
+        "category": "materiel-pour-le-bassin"
+      }
     }
   },
 
