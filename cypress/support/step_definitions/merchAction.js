@@ -164,3 +164,13 @@ Cypress.Commands.add("i_verify_level_3", (product_reference) => {
         cy.url().should('include', product.level_3.category )
     })
 })
+
+Then("Je vérifie les informations de la catégorie {string}", (product_reference) => {cy.i_verify_category_information(product_reference);})
+Cypress.Commands.add('i_verify_category_information', (product_reference) => {
+    cy.get('@bag').then((bag) => {
+        let product = bag.data.categories[product_reference];
+        bag.pages.list.header_seo.should('be.visible');
+        bag.pages.list.header_seo.should("have.text", product.header_seo);
+        bag.pages.list.cta_store_choice.should('be.visible');
+    })
+})

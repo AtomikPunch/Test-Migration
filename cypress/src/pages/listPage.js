@@ -39,4 +39,12 @@ exports.listPage = class listPage{
     product_in_PLP(store_id){
         return cy.get("#" + store_id, {timeout : 5000});
     }
+
+    get header_seo(){
+        return cy.get('.ens-product-list-header__heading', {timeout : 5000});
+    }
+
+    get cta_store_choice(){
+        return cy.get('.ens-product-list-template__locate-cta' , {timeout : 5000});
+    }
 }
