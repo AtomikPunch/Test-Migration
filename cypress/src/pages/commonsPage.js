@@ -49,4 +49,13 @@ exports.commonsPage = class commonsPage{
     get page(){
         return cy.get('#__layout', {timeout : 5000});
     }
+
+    store_title(store_id){
+        return cy.get('[data-test-store-locator-modal-card="'+store_id+'"] .ens-store-locator-card-head__title' , {timeout : 5000})
+    }
+
+    store_address(store_id){
+        return cy.get('[data-test-store-locator-modal-card="'+store_id+'"] .ens-store-locator-card-address' , {timeout : 5000});
+    }
+
 }

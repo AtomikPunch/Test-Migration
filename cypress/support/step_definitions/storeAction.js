@@ -71,3 +71,14 @@ Cypress.Commands.add('i_verify_store_not_selected', () => {
         bag.pages.commons.store_selected.should('not.exist');
     });
 })
+
+Then("Je vérifie les informations du {string}", (store_reference) => {cy.i_verify_store_information(store_reference);})
+Cypress.Commands.add('i_verify_store_information' , (store_reference) => {
+    cy.get('@bag').then((bag) => {
+        let store = bag.data.store[store_reference];
+        bag.pages.commons.store_title(store.store_id).should('have.text', store.name);
+        bag.pages.commons.store_address(store.store_id).should('contain', store.name);
+        bag.pages.commons.store_address(store.store_id).should('contain', store.postal_code);
+        bag.pages.commons.store_address(store.store_id).should('contain', store.address);
+    })
+})
