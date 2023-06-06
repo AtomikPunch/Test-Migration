@@ -174,3 +174,14 @@ Cypress.Commands.add('i_verify_category_information', (product_reference) => {
         bag.pages.list.cta_store_choice.should('be.visible');
     })
 })
+
+Then("Je vérifie la possibilité de paginer" , () => {cy.i_verify_pagination_possibility();})
+Cypress.Commands.add('i_verify_pagination_possibility', () => {
+    cy.get('@bag').then((bag) => {
+        bag.pages.list.product_counter.invoke('text').then(number_of_product => {
+            bag.pages.list.product_counter.should("have.text", number_of_product);
+            bag.pages.list.see_more_product.should('be.visible').click();
+            bag.pages.list.product_counter.should("not.have.text", number_of_product);
+        }) 
+    })
+})

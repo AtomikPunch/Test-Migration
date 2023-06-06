@@ -47,4 +47,8 @@ exports.listPage = class listPage{
     get cta_store_choice(){
         return cy.get('.ens-product-list-template__locate-cta' , {timeout : 5000});
     }
+
+    get product_counter(){
+        return cy.get('.ens-product-list-template__products-counter' , {timeout : 5000});
+    }
 }
