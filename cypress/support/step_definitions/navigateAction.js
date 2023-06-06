@@ -99,3 +99,25 @@ Cypress.Commands.add('i_access_a_category', (product_reference) => {
         bag.pages.list.product_list.should('be.visible');
     });
 });
+
+Then("Je navigue vers une PDP d'un {string} depuis une PLP", (product_reference) => {cy.i_access_PDP_through_PLP(product_reference);})
+Cypress.Commands.add('i_access_PDP_through_PLP', (product_reference) => {
+    cy.get('@bag').then((bag) => {
+        let product = bag.data.products[product_reference];
+        cy.wait(3000);
+            bag.pages.list.product_list.then($body => {
+            if ($body.find("#" + product.id).length > 0) {   
+                bag.pages.list.product_in_PLP(product.id).then($element => {
+                if ($element.is(':visible')){
+                    $element.click();
+                    }
+                });
+                } else {
+                    cy.log("element is not visible and doesn't exist")
+                    bag.pages.list.see_more_product.scrollIntoView().click();
+                    cy.wait(5000);
+                    cy.i_access_PDP_through_PLP(product_reference);
+                }
+            });
+    })
+})
